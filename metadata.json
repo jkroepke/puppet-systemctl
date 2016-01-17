@@ -1,0 +1,29 @@
+{
+  "name": "jkroepke-systemctl",
+  "version": "0.0.1",
+  "author": "Jan-Otto Kröpke",
+  "license": "Apache-2.0",
+  "summary": "puppet module to manage systemd services",
+  "source": "https://github.com/jkroepke/puppet-systemctl",
+  "project_page": "https://github.com/jkroepke/puppet-systemctl",
+  "issues_url": "https://github.com/jkroepke/puppet-systemctl/issues",
+  "tags": ["systemctl", "systemd", "service"],
+  "operatingsystem_support": [
+    {
+      "operatingsystem":"RedHat",
+      "operatingsystemrelease":[ "7.0" ]
+    },
+    {
+      "operatingsystem":"CentOS",
+      "operatingsystemrelease":[ "7.0" ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [ "16.04" ]
+    }
+  ],
+  "dependencies": [
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.8.0 < 5.0.0" }
+  ],
+  "data_provider": "hiera"
+}
