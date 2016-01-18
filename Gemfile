@@ -1,55 +1,26 @@
 source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
-def location_for(place, fake_version = nil)
-  if place =~ /^(git[:@][^#]*)#(.*)/
-    [fake_version, { :git => $1, :branch => $2, :require => false }].compact
-  elsif place =~ /^file:\/\/(.*)/
-    ['>= 0', { :path => File.expand_path($1), :require => false }]
-  else
-    [place, { :require => false }]
-  end
+# special dependencies for Ruby 1.8
+# since there are still several OSes with it
+if RUBY_VERSION =~ /^1\.8\./
+  gem 'rspec-core', '~> 3.1.7'
+  gem 'nokogiri', '~> 1.5.0'
 end
 
-group :development, :unit_tests do
-  # rspec must be v2 for ruby 1.8.7
-  if RUBY_VERSION >= '1.8.7' and RUBY_VERSION < '1.9'
-    gem 'rspec', '~> 2.0'
-  else
-    gem 'rspec-core', '3.1.7',     :require => false
-  end
+gem 'puppet', ENV.key?('PUPPET_VERSION') ? "~> #{ENV['PUPPET_VERSION']}.0" : '>= 2.7'
+gem 'rspec-puppet', '~> 2.0'
+gem 'puppetlabs_spec_helper', '>= 0.1.0'
+gem 'puppet-lint', '>= 1'
+gem 'facter', '>= 1.7.0'
+gem 'rspec-puppet-facts', :require => false
+gem 'metadata-json-lint'
 
-  gem 'puppetlabs_spec_helper',  :require => false
-  gem 'simplecov',               :require => false
-  gem 'json',                    :require => false
-  gem 'metadata-json-lint',      :require => false
-  gem 'rspec-puppet-facts',      :require => false
-end
+gem 'puppet-lint-strict_indent-check'
 
 group :system_tests do
-  if beaker_version = ENV['BEAKER_VERSION']
-    gem 'beaker', *location_for(beaker_version)
-  end
-  if beaker_rspec_version = ENV['BEAKER_RSPEC_VERSION']
-    gem 'beaker-rspec', *location_for(beaker_rspec_version)
-  else
-    gem 'beaker-rspec',  :require => false
-  end
-  gem 'serverspec',                    :require => false
-  gem 'beaker-puppet_install_helper',  :require => false
+  gem 'fog-google', '< 0.1.0' if RUBY_VERSION < "2.0.0"
+  gem 'beaker',          :require => false
+  gem 'beaker-rspec',    :require => false
+  gem 'serverspec',      :require => false
+  gem 'vagrant-wrapper', :require => false
 end
-
-
-
-if facterversion = ENV['FACTER_GEM_VERSION']
-  gem 'facter', facterversion, :require => false
-else
-  gem 'facter', :require => false
-end
-
-if puppetversion = ENV['PUPPET_GEM_VERSION']
-  gem 'puppet', puppetversion, :require => false
-else
-  gem 'puppet', :require => false
-end
-
-# vim:ft=ruby
