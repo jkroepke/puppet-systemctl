@@ -1,6 +1,6 @@
 [Unit]
-<%- if @after -%>
-After=<%= @after -%>
+<%- if @after_unit -%>
+After=<%= @after_unit -%>
 <%- end -%>
 <%- if @allow_isolate -%>
 AllowIsolate=<%= @allow_isolate -%>
@@ -59,8 +59,8 @@ AssertSecurity=<%= @assert_security -%>
 <%- if @assert_virtualization -%>
 AssertVirtualization=<%= @assert_virtualization -%>
 <%- end -%>
-<%- if @before -%>
-Before=<%= @before -%>
+<%- if @before_unit -%>
+Before=<%= @before_unit -%>
 <%- end -%>
 <%- if @binds_to -%>
 BindsTo=<%= @binds_to -%>

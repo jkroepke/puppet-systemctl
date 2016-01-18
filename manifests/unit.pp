@@ -128,7 +128,7 @@ class systemctl::unit(
 
 
   # unit
-  $after                            = undef,
+  $after_unit                       = undef,
   $allow_isolate                    = undef,
   $assert_acpower                   = undef,
   $assert_architecture              = undef,
@@ -148,7 +148,7 @@ class systemctl::unit(
   $assert_path_is_symbolic_link     = undef,
   $assert_security                  = undef,
   $assert_virtualization            = undef,
-  $before                           = undef,
+  $before_unit                      = undef,
   $binds_to                         = undef,
   $condition_acpower                = undef,
   $condition_architecture           = undef,
@@ -191,7 +191,7 @@ class systemctl::unit(
   $wants                            = undef,
 
   # install
-  $alias                            = undef,
+  $alias_unit                       = undef,
   $also                             = undef,
   $default_instance                 = undef,
   $required_by                      = undef,
