@@ -232,17 +232,21 @@ class systemctl::unit(
   if $service_manage {
     $depends = [Concat["${::systemctl::unit_dir}/${unit}.${type}"], Exec['systemctl daemon-reload']]
 
+    $before = $ensure ? {
+      absent  => $depends,
+      default => undef,
+    }
+
+    $require = $ensure ? {
+      absent  => undef,
+      default => $depends,
+    }
+
     service { "${unit}.${type}":
       ensure   => $ensure,
       enable   => $enable,
-      before   => $ensure ? {
-        absent  => $depends,
-        default => undef,
-      },
-      require  => $ensure ? {
-        absent  => undef,
-        default => $depends,
-      },
+      before   => $before,
+      require  => $require,
       provider => 'systemd';
     }
   }

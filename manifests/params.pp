@@ -12,13 +12,8 @@ class systemctl::params {
           }
         }
         'Debian': {
-          case $::operatingsystemmajrelease {
-            '8': {
-
-            }
-            default: {
+          if versioncmp($::operatingsystemmajrelease, '8') <= 0 {
             fail("The ${module_name} module is not supported on an ${::operatingsystem} ${::operatingsystemmajrelease} distribution.")
-            }
           }
         }
       }
@@ -34,6 +29,9 @@ class systemctl::params {
           if versioncmp($::operatingsystemmajrelease, '7') <= 0 {
             fail("The ${module_name} module is not supported on an ${::operatingsystem} ${::operatingsystemmajrelease} distribution.")
           }
+        }
+        default: {
+          fail("The ${module_name} module is not supported on an ${::operatingsystem} ${::operatingsystemmajrelease} distribution.")
         }
       }
     }
