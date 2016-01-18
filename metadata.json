@@ -7,23 +7,46 @@
   "source": "https://github.com/jkroepke/puppet-systemctl",
   "project_page": "https://github.com/jkroepke/puppet-systemctl",
   "issues_url": "https://github.com/jkroepke/puppet-systemctl/issues",
-  "tags": ["systemctl", "systemd", "service"],
+  "tags": ["systemctl", "systemd", "service", "automount", "swap"],
   "operatingsystem_support": [
     {
       "operatingsystem":"RedHat",
-      "operatingsystemrelease":[ "7.0" ]
+      "operatingsystemrelease": [
+        "7"
+      ]
     },
     {
       "operatingsystem":"CentOS",
-      "operatingsystemrelease":[ "7.0" ]
+      "operatingsystemrelease": [
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "8"
+      ]
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [ "16.04" ]
+      "operatingsystemrelease": [
+        "16.04"
+      ]
     }
   ],
   "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.8.0 < 5.0.0" }
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.8.0 < 5.0.0" },
+    { "name": "puppetlabs/concat", "version_requirement": ">= 1.2.5 < 2.0.0" }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">= 3.4.0 < 2015.4.0"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.4.0 < 5.0.0"
+    }
   ],
   "data_provider": "hiera"
 }

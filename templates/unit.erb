@@ -1,0 +1,184 @@
+[Unit]
+<%- if @after -%>
+After=<%= @after -%>
+<%- end -%>
+<%- if @allow_isolate -%>
+AllowIsolate=<%= @allow_isolate -%>
+<%- end -%>
+<%- if @assert_acpower -%>
+AssertACPower=<%= @assert_acpower -%>
+<%- end -%>
+<%- if @assert_architecture -%>
+AssertArchitecture=<%= @assert_architecture -%>
+<%- end -%>
+<%- if @assert_capability -%>
+AssertCapability=<%= @assert_capability -%>
+<%- end -%>
+<%- if @assert_directory_not_empty -%>
+AssertDirectoryNotEmpty=<%= @assert_directory_not_empty -%>
+<%- end -%>
+<%- if @assert_file_is_executable -%>
+AssertFileIsExecutable=<%= @assert_file_is_executable -%>
+<%- end -%>
+<%- if @assert_file_not_empty -%>
+AssertFileNotEmpty=<%= @assert_file_not_empty -%>
+<%- end -%>
+<%- if @assert_first_boot -%>
+AssertFirstBoot=<%= @assert_first_boot -%>
+<%- end -%>
+<%- if @assert_host -%>
+AssertHost=<%= @assert_host -%>
+<%- end -%>
+<%- if @assert_kernel_command_line -%>
+AssertKernelCommandLine=<%= @assert_kernel_command_line -%>
+<%- end -%>
+<%- if @assert_needs_update -%>
+AssertNeedsUpdate=<%= @assert_needs_update -%>
+<%- end -%>
+<%- if @assert_path_exists -%>
+AssertPathExists=<%= @assert_path_exists -%>
+<%- end -%>
+<%- if @assert_path_exists_glob -%>
+AssertPathExistsGlob=<%= @assert_path_exists_glob -%>
+<%- end -%>
+<%- if @assert_path_is_directory -%>
+AssertPathIsDirectory=<%= @assert_path_is_directory -%>
+<%- end -%>
+<%- if @assert_path_is_mount_point -%>
+AssertPathIsMountPoint=<%= @assert_path_is_mount_point -%>
+<%- end -%>
+<%- if @assert_path_is_read_write -%>
+AssertPathIsReadWrite=<%= @assert_path_is_read_write -%>
+<%- end -%>
+<%- if @assert_path_is_symbolic_link -%>
+AssertPathIsSymbolicLink=<%= @assert_path_is_symbolic_link -%>
+<%- end -%>
+<%- if @assert_security -%>
+AssertSecurity=<%= @assert_security -%>
+<%- end -%>
+<%- if @assert_virtualization -%>
+AssertVirtualization=<%= @assert_virtualization -%>
+<%- end -%>
+<%- if @before -%>
+Before=<%= @before -%>
+<%- end -%>
+<%- if @binds_to -%>
+BindsTo=<%= @binds_to -%>
+<%- end -%>
+<%- if @condition_acpower -%>
+ConditionACPower=<%= @condition_acpower -%>
+<%- end -%>
+<%- if @condition_architecture -%>
+ConditionArchitecture=<%= @condition_architecture -%>
+<%- end -%>
+<%- if @condition_capability -%>
+ConditionCapability=<%= @condition_capability -%>
+<%- end -%>
+<%- if @condition_directory_not_empty -%>
+ConditionDirectoryNotEmpty=<%= @condition_directory_not_empty -%>
+<%- end -%>
+<%- if @condition_file_is_executable -%>
+ConditionFileIsExecutable=<%= @condition_file_is_executable -%>
+<%- end -%>
+<%- if @condition_file_not_empty -%>
+ConditionFileNotEmpty=<%= @condition_file_not_empty -%>
+<%- end -%>
+<%- if @condition_first_boot -%>
+ConditionFirstBoot=<%= @condition_first_boot -%>
+<%- end -%>
+<%- if @condition_host -%>
+ConditionHost=<%= @condition_host -%>
+<%- end -%>
+<%- if @condition_kernel_command_line -%>
+ConditionKernelCommandLine=<%= @condition_kernel_command_line -%>
+<%- end -%>
+<%- if @condition_needs_update -%>
+ConditionNeedsUpdate=<%= @condition_needs_update -%>
+<%- end -%>
+<%- if @condition_path_exists -%>
+ConditionPathExists=<%= @condition_path_exists -%>
+<%- end -%>
+<%- if @condition_path_exists_glob -%>
+ConditionPathExistsGlob=<%= @condition_path_exists_glob -%>
+<%- end -%>
+<%- if @condition_path_is_directory -%>
+ConditionPathIsDirectory=<%= @condition_path_is_directory -%>
+<%- end -%>
+<%- if @condition_path_is_mount_point -%>
+ConditionPathIsMountPoint=<%= @condition_path_is_mount_point -%>
+<%- end -%>
+<%- if @condition_path_is_read_write -%>
+ConditionPathIsReadWrite=<%= @condition_path_is_read_write -%>
+<%- end -%>,
+<%- if @condition_path_is_symbolic_link -%>
+ConditionPathIsSymbolicLink=<%= @condition_path_is_symbolic_link -%>
+<%- end -%>
+<%- if @condition_security -%>
+ConditionSecurity=<%= @condition_security -%>
+<%- end -%>
+<%- if @condition_virtualization -%>
+ConditionVirtualization=<%= @condition_virtualization -%>
+<%- end -%>
+<%- if @conflicts -%>
+Conflicts=<%= @conflicts -%>
+<%- end -%>
+<%- if @default_dependencies -%>
+DefaultDependencies=<%= @default_dependencies -%>
+<%- end -%>
+<%- if @description -%>
+Description=<%= @description -%>
+<%- end -%>
+<%- if @documentation -%>
+Documentation=<%= @documentation -%>
+<%- end -%>
+<%- if @ignore_on_isolate -%>
+IgnoreOnIsolate=<%= @ignore_on_isolate -%>
+<%- end -%>
+<%- if @job_timeout_action -%>
+JobTimeoutAction=<%= @job_timeout_action -%>
+<%- end -%>
+<%- if @job_timeout_reboot_argument -%>
+JobTimeoutRebootArgument=<%= @job_timeout_reboot_argument -%>
+<%- end -%>
+<%- if @job_timeout_sec -%>
+JobTimeoutSec=<%= @job_timeout_sec -%>
+<%- end -%>
+<%- if @joins_namespace_of -%>
+JoinsNamespaceOf=<%= @joins_namespace_of -%>
+<%- end -%>
+<%- if @on_failure -%>
+OnFailure=<%= @on_failure -%>
+<%- end -%>
+<%- if @on_failure_job_mode -%>
+OnFailureJobMode=<%= @on_failure_job_mode -%>
+<%- end -%>
+<%- if @part_of -%>
+PartOf=<%= @part_of -%>
+<%- end -%>
+<%- if @propagates_reload_to -%>
+PropagatesReloadTo=<%= @propagates_reload_to -%>
+<%- end -%>
+<%- if @refuse_manual_start -%>
+RefuseManualStart=<%= @refuse_manual_start -%>
+<%- end -%>
+<%- if @refuse_manual_stop -%>
+RefuseManualStop=<%= @refuse_manual_stop -%>
+<%- end -%>
+<%- if @reload_propagated_from -%>
+ReloadPropagatedFrom=<%= @reload_propagated_from -%>
+<%- end -%>
+<%- if @requires -%>
+Requires=<%= @requires -%>
+<%- end -%>
+<%- if @requires_mounts_for -%>
+RequiresMountsFor=<%= @requires_mounts_for -%>
+<%- end -%>
+<%- if @requisite -%>
+Requisite=<%= @requisite -%>
+<%- end -%>
+<%- if @stop_when_unneeded -%>
+StopWhenUnneeded=<%= @stop_when_unneeded -%>
+<%- end -%>
+<%- if @wants -%>
+Wants=<%= @wants -%>
+<%- end -%>

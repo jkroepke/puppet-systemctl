@@ -1,0 +1,10 @@
+[Automount]
+<%- if @where -%>
+Where= <%= @where -%>
+<%- end -%>
+<%- if @directory_mode -%>
+DirectoryMode= <%= @directory_mode -%>
+<%- end -%>
+<%- if @timeout_idle_sec -%>
+TimeoutIdleSec= <%= @timeout_idle_sec -%>
+<%- end -%>

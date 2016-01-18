@@ -1,0 +1,322 @@
+[Service]
+<%- if @app_armor_profile -%>
+AppArmorProfile=<%= @app_armor_profile -%>
+<%- end -%>
+<%- if @bus_name -%>
+BusName=<%= @bus_name -%>
+<%- end -%>
+<%- if @bus_policy -%>
+BusPolicy=<%= @bus_policy -%>
+<%- end -%>
+<%- if @capabilities -%>
+Capabilities=<%= @capabilities -%>
+<%- end -%>
+<%- if @capability_bounding_set -%>
+CapabilityBoundingSet=<%= @capability_bounding_set -%>
+<%- end -%>
+<%- if @cpu_affinity -%>
+CPUAffinity=<%= @cpu_affinity -%>
+<%- end -%>
+<%- if @cpu_scheduling_policy -%>
+CPUSchedulingPolicy=<%= @cpu_scheduling_policy -%>
+<%- end -%>
+<%- if @cpu_scheduling_priority -%>
+CPUSchedulingPriority=<%= @cpu_scheduling_priority -%>
+<%- end -%>
+<%- if @cpu_scheduling_reset_on_fork -%>
+CPUSchedulingResetOnFork=<%= @cpu_scheduling_reset_on_fork -%>
+<%- end -%>
+<%- if @environment -%>
+Environment=<%= @environment -%>
+<%- end -%>
+<%- if @environment_file -%>
+EnvironmentFile=<%= @environment_file -%>
+<%- end -%>
+<%- if @exec_reload -%>
+ExecReload=<%= @exec_reload -%>
+<%- end -%>
+<%- if @exec_start -%>
+ExecStart=<%= @exec_start -%>
+<%- end -%>
+<%- if @exec_start_post -%>
+ExecStartPost=<%= @exec_start_post -%>
+<%- end -%>
+<%- if @exec_start_pre -%>
+ExecStartPre=<%= @exec_start_pre -%>
+<%- end -%>
+<%- if @exec_stop -%>
+ExecStop=<%= @exec_stop -%>
+<%- end -%>
+<%- if @exec_stop_post -%>
+ExecStopPost=<%= @exec_stop_post -%>
+<%- end -%>
+<%- if @failure_action -%>
+FailureAction=<%= @failure_action -%>
+<%- end -%>
+<%- if @file_descriptor_store_max -%>
+FileDescriptorStoreMax=<%= @file_descriptor_store_max -%>
+<%- end -%>
+<%- if @group -%>
+Group=<%= @group -%>
+<%- end -%>
+<%- if @guess_main_pid -%>
+GuessMainPID=<%= @guess_main_pid -%>
+<%- end -%>
+<%- if @ignore_sigpipe -%>
+IgnoreSIGPIPE=<%= @ignore_sigpipe -%>
+<%- end -%>
+<%- if @inaccessible_directories -%>
+InaccessibleDirectories=<%= @inaccessible_directories -%>
+<%- end -%>
+<%- if @io_scheduling_class -%>
+IOSchedulingClass=<%= @io_scheduling_class -%>
+<%- end -%>
+<%- if @io_scheduling_priority -%>
+IOSchedulingPriority=<%= @io_scheduling_priority -%>
+<%- end -%>
+<%- if @limit_as -%>
+LimitAS=<%= @limit_as -%>
+<%- end -%>
+<%- if @limit_core -%>
+LimitCORE=<%= @limit_core -%>
+<%- end -%>
+<%- if @limit_cpu -%>
+LimitCPU=<%= @limit_cpu -%>
+<%- end -%>
+<%- if @limit_data -%>
+LimitDATA=<%= @limit_data -%>
+<%- end -%>
+<%- if @limit_fsize -%>
+LimitFSIZE=<%= @limit_fsize -%>
+<%- end -%>
+<%- if @limit_locks -%>
+LimitLOCKS=<%= @limit_locks -%>
+<%- end -%>
+<%- if @limit_memlock -%>
+LimitMEMLOCK=<%= @limit_memlock -%>
+<%- end -%>
+<%- if @limit_msgqueue -%>
+LimitMSGQUEUE=<%= @limit_msgqueue -%>
+<%- end -%>
+<%- if @limit_nice -%>
+LimitNICE=<%= @limit_nice -%>
+<%- end -%>
+<%- if @limit_nofile -%>
+LimitNOFILE=<%= @limit_nofile -%>
+<%- end -%>
+<%- if @limit_nproc -%>
+LimitNPROC=<%= @limit_nproc -%>
+<%- end -%>
+<%- if @limit_rss -%>
+LimitRSS=<%= @limit_rss -%>
+<%- end -%>
+<%- if @limit_rtprio -%>
+LimitRTPRIO=<%= @limit_rtprio -%>
+<%- end -%>
+<%- if @limit_rttime -%>
+LimitRTTIME=<%= @limit_rttime -%>
+<%- end -%>
+<%- if @limit_sigpending -%>
+LimitSIGPENDING=<%= @limit_sigpending -%>
+<%- end -%>
+<%- if @limit_stack -%>
+LimitSTACK=<%= @limit_stack -%>
+<%- end -%>
+<%- if @mount_flags -%>
+MountFlags=<%= @mount_flags -%>
+<%- end -%>
+<%- if @nice -%>
+Nice=<%= @nice -%>
+<%- end -%>
+<%- if @non_blocking -%>
+NonBlocking=<%= @non_blocking -%>
+<%- end -%>
+<%- if @no_new_privileges -%>
+NoNewPrivileges=<%= @no_new_privileges -%>
+<%- end -%>
+<%- if @notify_access -%>
+NotifyAccess=<%= @notify_access -%>
+<%- end -%>
+<%- if @oom_score_adjust -%>
+OOMScoreAdjust=<%= @oom_score_adjust -%>
+<%- end -%>
+<%- if @pam_name -%>
+PAMName=<%= @pam_name -%>
+<%- end -%>
+<%- if @pass_environment -%>
+PassEnvironment=<%= @pass_environment -%>
+<%- end -%>
+<%- if @permissions_start_only -%>
+PermissionsStartOnly=<%= @permissions_start_only -%>
+<%- end -%>
+<%- if @personality -%>
+Personality=<%= @personality -%>
+<%- end -%>
+<%- if @pid_file -%>
+PIDFile=<%= @pid_file -%>
+<%- end -%>
+<%- if @private_devices -%>
+PrivateDevices=<%= @private_devices -%>
+<%- end -%>
+<%- if @private_network -%>
+PrivateNetwork=<%= @private_network -%>
+<%- end -%>
+<%- if @private_tmp -%>
+PrivateTmp=<%= @private_tmp -%>
+<%- end -%>
+<%- if @protect_home -%>
+ProtectHome=<%= @protect_home -%>
+<%- end -%>
+<%- if @protect_system -%>
+ProtectSystem=<%= @protect_system -%>
+<%- end -%>
+<%- if @read_only_directories -%>
+ReadOnlyDirectories=<%= @read_only_directories -%>
+<%- end -%>
+<%- if @read_write_directories -%>
+ReadWriteDirectories=<%= @read_write_directories -%>
+<%- end -%>
+<%- if @reboot_argument -%>
+RebootArgument=<%= @reboot_argument -%>
+<%- end -%>
+<%- if @remain_after_exit -%>
+RemainAfterExit=<%= @remain_after_exit -%>
+<%- end -%>
+<%- if @restart -%>
+Restart=<%= @restart -%>
+<%- end -%>
+<%- if @restart -%>
+Restart=<%= @restart -%>
+<%- end -%>
+<%- if @restart_force_exit_status -%>
+RestartForceExitStatus=<%= @restart_force_exit_status -%>
+<%- end -%>
+<%- if @restart_prevent_exit_status -%>
+RestartPreventExitStatus=<%= @restart_prevent_exit_status -%>
+<%- end -%>
+<%- if @restart_sec -%>
+RestartSec=<%= @restart_sec -%>
+<%- end -%>
+<%- if @restrict_address_families -%>
+RestrictAddressFamilies=<%= @restrict_address_families -%>
+<%- end -%>
+<%- if @root_directory -%>
+RootDirectory=<%= @root_directory -%>
+<%- end -%>
+<%- if @root_directory_start_only -%>
+RootDirectoryStartOnly=<%= @root_directory_start_only -%>
+<%- end -%>
+<%- if @runtime_directory -%>
+RuntimeDirectory=<%= @runtime_directory -%>
+<%- end -%>
+<%- if @runtime_directory_mode -%>
+RuntimeDirectoryMode=<%= @runtime_directory_mode -%>
+<%- end -%>
+<%- if @secure_bits -%>
+SecureBits=<%= @secure_bits -%>
+<%- end -%>
+<%- if @se_linux_context -%>
+SELinuxContext=<%= @se_linux_context -%>
+<%- end -%>
+<%- if @smack_process_label -%>
+SmackProcessLabel=<%= @smack_process_label -%>
+<%- end -%>
+<%- if @sockets -%>
+Sockets=<%= @sockets -%>
+<%- end -%>
+<%- if @standard_error -%>
+StandardError=<%= @standard_error -%>
+<%- end -%>
+<%- if @standard_input -%>
+StandardInput=<%= @standard_input -%>
+<%- end -%>
+<%- if @standard_output -%>
+StandardOutput=<%= @standard_output -%>
+<%- end -%>
+<%- if @start_limit_action -%>
+StartLimitAction=<%= @start_limit_action -%>
+<%- end -%>
+<%- if @start_limit_burst -%>
+StartLimitBurst=<%= @start_limit_burst -%>
+<%- end -%>
+<%- if @start_limit_interval -%>
+StartLimitInterval=<%= @start_limit_interval -%>
+<%- end -%>
+<%- if @success_exit_status -%>
+SuccessExitStatus=<%= @success_exit_status -%>
+<%- end -%>
+<%- if @supplementary_groups -%>
+SupplementaryGroups=<%= @supplementary_groups -%>
+<%- end -%>
+<%- if @syslog_facility -%>
+SyslogFacility=<%= @syslog_facility -%>
+<%- end -%>
+<%- if @syslog_identifier -%>
+SyslogIdentifier=<%= @syslog_identifier -%>
+<%- end -%>
+<%- if @syslog_level -%>
+SyslogLevel=<%= @syslog_level -%>
+<%- end -%>
+<%- if @syslog_level_prefix -%>
+SyslogLevelPrefix=<%= @syslog_level_prefix -%>
+<%- end -%>
+<%- if @system_call_architectures -%>
+SystemCallArchitectures=<%= @system_call_architectures -%>
+<%- end -%>
+<%- if @system_call_error_number -%>
+SystemCallErrorNumber=<%= @system_call_error_number -%>
+<%- end -%>
+<%- if @system_call_filter -%>
+SystemCallFilter=<%= @system_call_filter -%>
+<%- end -%>
+<%- if @timeout_sec -%>
+TimeoutSec=<%= @timeout_sec -%>
+<%- end -%>
+<%- if @timeout_start_sec -%>
+TimeoutStartSec=<%= @timeout_start_sec -%>
+<%- end -%>
+<%- if @timeout_stop_sec -%>
+TimeoutStopSec=<%= @timeout_stop_sec -%>
+<%- end -%>
+<%- if @timer_slack_nsec -%>
+TimerSlackNSec=<%= @timer_slack_nsec -%>
+<%- end -%>
+<%- if @tty_path -%>
+TTYPath=<%= @tty_path -%>
+<%- end -%>
+<%- if @tty_reset -%>
+TTYReset=<%= @tty_reset -%>
+<%- end -%>
+<%- if @tty_v_hangup -%>
+TTYVHangup=<%= @tty_v_hangup -%>
+<%- end -%>
+<%- if @tty_vt_disallocate -%>
+TTYVTDisallocate=<%= @tty_vt_disallocate -%>
+<%- end -%>
+<%- if @type -%>
+Type=<%= @type -%>
+<%- end -%>
+<%- if @umask -%>
+UMask=<%= @umask -%>
+<%- end -%>
+<%- if @usb_function_descriptors -%>
+USBFunctionDescriptors=<%= @usb_function_descriptors -%>
+<%- end -%>
+<%- if @usb_function_strings -%>
+USBFunctionStrings=<%= @usb_function_strings -%>
+<%- end -%>
+<%- if @user -%>
+User=<%= @user -%>
+<%- end -%>
+<%- if @utmp_identifier -%>
+UtmpIdentifier=<%= @utmp_identifier -%>
+<%- end -%>
+<%- if @utmp_mode -%>
+UtmpMode=<%= @utmp_mode -%>
+<%- end -%>
+<%- if @watchdog_sec -%>
+WatchdogSec=<%= @watchdog_sec -%>
+<%- end -%>
+<%- if @working_directory -%>
+WorkingDirectory=<%= @working_directory -%>
+<%- end -%>
