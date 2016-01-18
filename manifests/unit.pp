@@ -199,11 +199,9 @@ class systemctl::unit(
 ) {
   include systemctl
 
-  validate_re($ensure, '^(present|absent)$',
-    "${ensure} is not supported for ensure. Allowed values are 'present' and 'absent'.")
+  validate_re($ensure, '^(present|absent)$', "${ensure} is not supported for ensure. Allowed values are 'present' and 'absent'.")
 
-  validate_re($type, '^(service|swap|automount)$',
-    "${type} is not supported for type. Supported type are 'service', 'swap' and 'automount'.")
+  validate_re($type, '^(service|swap|automount)$', "${type} is not supported for type. Supported type are 'service', 'swap' and 'automount'.")
 
   Concat::Fragment {
     target => "${::systemctl::unit_dir}/${unit}.${type}"
