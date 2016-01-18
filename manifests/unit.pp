@@ -243,8 +243,8 @@ class systemctl::unit(
     }
 
     service { "${unit}.${type}":
-      ensure   => $ensure,
-      enable   => $enable,
+      ensure   => $service_ensure,
+      enable   => $service_enable,
       before   => $before,
       require  => $require,
       provider => 'systemd';

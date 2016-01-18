@@ -16,6 +16,9 @@ class systemctl::params {
             fail("The ${module_name} module is not supported on an ${::operatingsystem} ${::operatingsystemmajrelease} distribution.")
           }
         }
+        default: {
+          fail("The ${module_name} module is not supported on an ${::operatingsystem} system.")
+        }
       }
     }
     'RedHat': {
@@ -31,7 +34,7 @@ class systemctl::params {
           }
         }
         default: {
-          fail("The ${module_name} module is not supported on an ${::operatingsystem} ${::operatingsystemmajrelease} distribution.")
+          fail("The ${module_name} module is not supported on an ${::operatingsystem} system.")
         }
       }
     }
