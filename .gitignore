@@ -27,6 +27,7 @@ Session.vim
 # .idea/uiDesigner.xml
 
 # Gradle:
+
 # .idea/gradle.xml
 # .idea/libraries
 
@@ -53,3 +54,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
+
+### Vagrant template
+.vagrant/
