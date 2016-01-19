@@ -924,7 +924,7 @@ class systemctl::unit(
   }
 
   concat::fragment { "automount_${unit}.${type}":
-    content => template("systemctl/${type}.erb"),
+    content => template("systemctl/unit/${type}.erb"),
     order   => '02';
   }
 
