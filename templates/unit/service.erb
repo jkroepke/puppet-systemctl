@@ -2,6 +2,21 @@
 <%- unless @app_armor_profile.nil? -%>
 AppArmorProfile=<%= @app_armor_profile -%>
 <%- end -%>
+<%- unless @block_io_accounting.nil? -%>
+BlockIOAccounting=<%= @block_io_accounting -%>
+<%- end -%>
+<%- unless @block_io_device_weight.nil? -%>
+BlockIODeviceWeight=<%= @block_io_device_weight -%>
+<%- end -%>
+<%- unless @block_io_read_bandwidth.nil? -%>
+BlockIOReadBandwidth=<%= @block_io_read_bandwidth -%>
+<%- end -%>
+<%- unless @block_io_weight.nil? -%>
+BlockIOWeight=<%= @block_io_weight -%>
+<%- end -%>
+<%- unless @block_io_write_bandwidth.nil? -%>
+BlockIOWriteBandwidth=<%= @block_io_write_bandwidth -%>
+<%- end -%>
 <%- unless @bus_name.nil? -%>
 BusName=<%= @bus_name -%>
 <%- end -%>
@@ -17,6 +32,12 @@ CapabilityBoundingSet=<%= @capability_bounding_set -%>
 <%- unless @cpu_affinity.nil? -%>
 CPUAffinity=<%= @cpu_affinity -%>
 <%- end -%>
+<%- unless @cpu_accounting.nil? -%>
+CPUAccounting=<%= @cpu_accounting -%>
+<%- end -%>
+<%- unless @cpu_quota.nil? -%>
+CPUQuota=<%= @cpu_quota -%>
+<%- end -%>
 <%- unless @cpu_scheduling_policy.nil? -%>
 CPUSchedulingPolicy=<%= @cpu_scheduling_policy -%>
 <%- end -%>
@@ -25,6 +46,18 @@ CPUSchedulingPriority=<%= @cpu_scheduling_priority -%>
 <%- end -%>
 <%- unless @cpu_scheduling_reset_on_fork.nil? -%>
 CPUSchedulingResetOnFork=<%= @cpu_scheduling_reset_on_fork -%>
+<%- end -%>
+<%- unless @cpu_shares.nil? -%>
+CPUShares=<%= @cpu_shares -%>
+<%- end -%>
+<%- unless @delegate.nil? -%>
+Delegate=<%= @delegate -%>
+<%- end -%>
+<%- unless @device_policy.nil? -%>
+DevicePolicy=<%= @device_policy -%>
+<%- end -%>
+<%- unless @device_allow.nil? -%>
+DeviceAllow=<%= @device_allow -%>
 <%- end -%>
 <%- unless @environment.nil? -%>
 Environment=<%= @environment -%>
@@ -125,8 +158,17 @@ LimitSIGPENDING=<%= @limit_sigpending -%>
 <%- unless @limit_stack.nil? -%>
 LimitSTACK=<%= @limit_stack -%>
 <%- end -%>
+<%- unless @net_class.nil? -%>
+NetClass=<%= @net_class -%>
+<%- end -%>
 <%- unless @mount_flags.nil? -%>
 MountFlags=<%= @mount_flags -%>
+<%- end -%>
+<%- unless @memory_accounting.nil? -%>
+MemoryAccounting=<%= @memory_accounting -%>
+<%- end -%>
+<%- unless @memory_limit.nil? -%>
+MemoryLimit=<%= @memory_limit -%>
 <%- end -%>
 <%- unless @nice.nil? -%>
 Nice=<%= @nice -%>
@@ -221,6 +263,9 @@ SecureBits=<%= @secure_bits -%>
 <%- unless @se_linux_context.nil? -%>
 SELinuxContext=<%= @se_linux_context -%>
 <%- end -%>
+<%- unless @slice.nil? -%>
+Slice=<%= @slice -%>
+<%- end -%>
 <%- unless @smack_process_label.nil? -%>
 SmackProcessLabel=<%= @smack_process_label -%>
 <%- end -%>
@@ -244,6 +289,12 @@ StartLimitBurst=<%= @start_limit_burst -%>
 <%- end -%>
 <%- unless @start_limit_interval.nil? -%>
 StartLimitInterval=<%= @start_limit_interval -%>
+<%- end -%>
+<%- unless @startup_cpu_shares.nil? -%>
+StartupCPUShares=<%= @startup_cpu_shares -%>
+<%- end -%>
+<%- unless @startup_block_io_weight.nil? -%>
+StartupBlockIOWeight=<%= @startup_block_io_weight -%>
 <%- end -%>
 <%- unless @success_exit_status.nil? -%>
 SuccessExitStatus=<%= @success_exit_status -%>
@@ -271,6 +322,12 @@ SystemCallErrorNumber=<%= @system_call_error_number -%>
 <%- end -%>
 <%- unless @system_call_filter.nil? -%>
 SystemCallFilter=<%= @system_call_filter -%>
+<%- end -%>
+<%- unless @tasks_accounting.nil? -%>
+TasksAccounting=<%= @tasks_accounting -%>
+<%- end -%>
+<%- unless @tasks_max.nil? -%>
+TasksMax=<%= @tasks_max -%>
 <%- end -%>
 <%- unless @timeout_sec.nil? -%>
 TimeoutSec=<%= @timeout_sec -%>

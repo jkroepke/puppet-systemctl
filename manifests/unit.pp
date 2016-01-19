@@ -38,14 +38,23 @@ class systemctl::unit(
 
   # service
   $app_armor_profile                = undef,
+  $block_io_accounting              = undef,
+  $block_io_device_weight           = [],
+  $block_io_read_bandwidth          = [],
+  $block_io_write_bandwidth         = [],
   $bus_name                         = undef,
   $bus_policy                       = undef,
   $capabilities                     = [],
   $capability_bounding_set          = [],
+  $cpu_accounting                   = undef,
   $cpu_affinity                     = undef,
+  $cpu_quota                        = undef,
   $cpu_scheduling_policy            = undef,
   $cpu_scheduling_priority          = undef,
   $cpu_scheduling_reset_on_fork     = undef,
+  $cpu_shares                       = undef,
+  $delegate                         = undef,
+  $device_allow                     = [],
   $environment                      = [],
   $environment_file                 = [],
   $exec_reload                      = undef,
@@ -81,7 +90,10 @@ class systemctl::unit(
   $limit_rttime                     = undef,
   $limit_sigpending                 = undef,
   $limit_stack                      = undef,
+  $memory_accounting                = undef,
+  $memory_limit                     = undef,
   $mount_flags                      = undef,
+  $net_class                        = undef,
   $nice                             = undef,
   $non_blocking                     = undef,
   $no_new_privileges                = undef,
@@ -114,6 +126,7 @@ class systemctl::unit(
   $se_linux_context                 = undef,
   $send_sighub                      = undef,
   $send_sigkill                     = undef,
+  $slice                            = undef,
   $smack_process_label              = undef,
   $sockets                          = undef,
   $standard_error                   = undef,
@@ -122,6 +135,8 @@ class systemctl::unit(
   $start_limit_action               = undef,
   $start_limit_burst                = undef,
   $start_limit_interval             = undef,
+  $startup_block_io_weight          = undef,
+  $startup_cpu_shares               = undef,
   $success_exit_status              = [],
   $supplementary_groups             = [],
   $syslog_facility                  = undef,
@@ -131,6 +146,8 @@ class systemctl::unit(
   $system_call_architectures        = [],
   $system_call_error_number         = undef,
   $system_call_filter               = [],
+  $tasks_accounting                 = undef,
+  $tasks_max                        = undef,
   $timeout_sec                      = undef,
   $timeout_start_sec                = undef,
   $timeout_stop_sec                 = undef,
@@ -269,6 +286,19 @@ class systemctl::unit(
         validate_string($app_armor_profile)
       }
 
+      if ($block_io_accounting != undef) {
+        validate_bool($block_io_accounting)
+      }
+
+      any2array($block_io_device_weight)
+      any2array($block_io_read_bandwidth)
+
+      if !is_integer($block_io_weight) {
+        fail('$block_io_weight must be an integer.')
+      }
+
+      any2array($block_io_write_bandwidth)
+
       if ($bus_name != undef) {
         validate_string($bus_name)
       }
@@ -280,8 +310,16 @@ class systemctl::unit(
       any2array($capabilities)
       any2array($capability_bounding_set)
 
+      if ($cpu_accounting != undef) {
+        validate_bool($cpu_accounting)
+      }
+
       if ($cpu_affinity != undef) {
         validate_string($cpu_affinity)
+      }
+
+      if ($cpu_quota != undef) {
+        validate_re($cpu_quota, '^\d+%$')
       }
 
       if ($cpu_scheduling_policy != undef) {
@@ -294,6 +332,20 @@ class systemctl::unit(
 
       if ($cpu_scheduling_reset_on_fork != undef) {
         validate_bool($cpu_scheduling_reset_on_fork)
+      }
+
+      if !is_integer($cpu_shares) {
+        fail('$cpu_shares must be an integer.')
+      }
+
+      if ($delegate != undef) {
+        validate_bool($delegate)
+      }
+
+      any2array($device_allow)
+
+      if ($device_policy != undef) {
+        validate_re($device_policy, '^(auto|closed|strict)$')
       }
 
       any2array($environment)
@@ -415,8 +467,20 @@ class systemctl::unit(
         fail('$limit_nproc must be an integer.')
       }
 
+      if ($memory_accounting != undef) {
+        validate_bool($memory_accounting)
+      }
+
+      if !is_integer($memory_limit) {
+        fail('$memory_limit must be an integer.')
+      }
+
       if ($mount_flags != undef) {
         validate_string($mount_flags)
+      }
+
+      if !is_integer($net_class) {
+        fail('$net_class must be an integer.')
       }
 
       if !is_integer($nice) {
@@ -530,6 +594,10 @@ class systemctl::unit(
         validate_bool($send_sigkill)
       }
 
+      if ($slice != undef) {
+        validate_string($slice)
+      }
+
       if ($smack_process_label != undef) {
         validate_string($smack_process_label)
       }
@@ -562,6 +630,14 @@ class systemctl::unit(
         fail('$start_limit_interval must be an integer.')
       }
 
+      if !is_integer($startup_block_io_weight) {
+        fail('$startup_block_io_weight must be an integer.')
+      }
+
+      if !is_integer($startup_cpu_shares) {
+        fail('$startup_cpu_shares must be an integer.')
+      }
+
       any2array($success_exit_status)
       any2array($supplementary_groups)
 
@@ -592,6 +668,14 @@ class systemctl::unit(
       }
 
       any2array($system_call_filter)
+
+      if ($tasks_accounting != undef) {
+        validate_bool($tasks_accounting)
+      }
+
+      if !is_integer($tasks_max) {
+        fail('$tasks_max must be an integer.')
+      }
 
       if ($timeout_sec != undef) {
         validate_string($timeout_sec)
