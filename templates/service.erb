@@ -1,325 +1,325 @@
 [Service]
-<%- if @app_armor_profile -%>
+<%- unless @app_armor_profile.nil? -%>
 AppArmorProfile=<%= @app_armor_profile -%>
 <%- end -%>
-<%- if @bus_name -%>
+<%- unless @bus_name.nil? -%>
 BusName=<%= @bus_name -%>
 <%- end -%>
-<%- if @bus_policy -%>
+<%- unless @bus_policy.nil? -%>
 BusPolicy=<%= @bus_policy -%>
 <%- end -%>
-<%- if @capabilities -%>
+<%- unless @capabilities.nil? -%>
 Capabilities=<%= @capabilities -%>
 <%- end -%>
-<%- if @capability_bounding_set -%>
+<%- unless @capability_bounding_set.nil? -%>
 CapabilityBoundingSet=<%= @capability_bounding_set -%>
 <%- end -%>
-<%- if @cpu_affinity -%>
+<%- unless @cpu_affinity.nil? -%>
 CPUAffinity=<%= @cpu_affinity -%>
 <%- end -%>
-<%- if @cpu_scheduling_policy -%>
+<%- unless @cpu_scheduling_policy.nil? -%>
 CPUSchedulingPolicy=<%= @cpu_scheduling_policy -%>
 <%- end -%>
-<%- if @cpu_scheduling_priority -%>
+<%- unless @cpu_scheduling_priority.nil? -%>
 CPUSchedulingPriority=<%= @cpu_scheduling_priority -%>
 <%- end -%>
-<%- if @cpu_scheduling_reset_on_fork -%>
+<%- unless @cpu_scheduling_reset_on_fork.nil? -%>
 CPUSchedulingResetOnFork=<%= @cpu_scheduling_reset_on_fork -%>
 <%- end -%>
-<%- if @environment -%>
+<%- unless @environment.nil? -%>
 Environment=<%= @environment -%>
 <%- end -%>
-<%- if @environment_file -%>
+<%- unless @environment_file.nil? -%>
 EnvironmentFile=<%= @environment_file -%>
 <%- end -%>
-<%- if @exec_reload -%>
+<%- unless @exec_reload.nil? -%>
 ExecReload=<%= @exec_reload -%>
 <%- end -%>
-<%- if @exec_start -%>
+<%- unless @exec_start.nil? -%>
 ExecStart=<%= @exec_start -%>
 <%- end -%>
-<%- if @exec_start_post -%>
+<%- unless @exec_start_post.nil? -%>
 ExecStartPost=<%= @exec_start_post -%>
 <%- end -%>
-<%- if @exec_start_pre -%>
+<%- unless @exec_start_pre.nil? -%>
 ExecStartPre=<%= @exec_start_pre -%>
 <%- end -%>
-<%- if @exec_stop -%>
+<%- unless @exec_stop.nil? -%>
 ExecStop=<%= @exec_stop -%>
 <%- end -%>
-<%- if @exec_stop_post -%>
+<%- unless @exec_stop_post.nil? -%>
 ExecStopPost=<%= @exec_stop_post -%>
 <%- end -%>
-<%- if @exec_stop_pre -%>
+<%- unless @exec_stop_pre.nil? -%>
 ExecStopPre=<%= @exec_stop_pre -%>
 <%- end -%>
-<%- if @failure_action -%>
+<%- unless @failure_action.nil? -%>
 FailureAction=<%= @failure_action -%>
 <%- end -%>
-<%- if @file_descriptor_store_max -%>
+<%- unless @file_descriptor_store_max.nil? -%>
 FileDescriptorStoreMax=<%= @file_descriptor_store_max -%>
 <%- end -%>
-<%- if @group -%>
+<%- unless @group.nil? -%>
 Group=<%= @group -%>
 <%- end -%>
-<%- if @guess_main_pid -%>
+<%- unless @guess_main_pid.nil? -%>
 GuessMainPID=<%= @guess_main_pid -%>
 <%- end -%>
-<%- if @ignore_sigpipe -%>
+<%- unless @ignore_sigpipe.nil? -%>
 IgnoreSIGPIPE=<%= @ignore_sigpipe -%>
 <%- end -%>
-<%- if @inaccessible_directories -%>
+<%- unless @inaccessible_directories.nil? -%>
 InaccessibleDirectories=<%= @inaccessible_directories -%>
 <%- end -%>
-<%- if @io_scheduling_class -%>
+<%- unless @io_scheduling_class.nil? -%>
 IOSchedulingClass=<%= @io_scheduling_class -%>
 <%- end -%>
-<%- if @io_scheduling_priority -%>
+<%- unless @io_scheduling_priority.nil? -%>
 IOSchedulingPriority=<%= @io_scheduling_priority -%>
 <%- end -%>
-<%- if @limit_as -%>
+<%- unless @limit_as.nil? -%>
 LimitAS=<%= @limit_as -%>
 <%- end -%>
-<%- if @limit_core -%>
+<%- unless @limit_core.nil? -%>
 LimitCORE=<%= @limit_core -%>
 <%- end -%>
-<%- if @limit_cpu -%>
+<%- unless @limit_cpu.nil? -%>
 LimitCPU=<%= @limit_cpu -%>
 <%- end -%>
-<%- if @limit_data -%>
+<%- unless @limit_data.nil? -%>
 LimitDATA=<%= @limit_data -%>
 <%- end -%>
-<%- if @limit_fsize -%>
+<%- unless @limit_fsize.nil? -%>
 LimitFSIZE=<%= @limit_fsize -%>
 <%- end -%>
-<%- if @limit_locks -%>
+<%- unless @limit_locks.nil? -%>
 LimitLOCKS=<%= @limit_locks -%>
 <%- end -%>
-<%- if @limit_memlock -%>
+<%- unless @limit_memlock.nil? -%>
 LimitMEMLOCK=<%= @limit_memlock -%>
 <%- end -%>
-<%- if @limit_msgqueue -%>
+<%- unless @limit_msgqueue.nil? -%>
 LimitMSGQUEUE=<%= @limit_msgqueue -%>
 <%- end -%>
-<%- if @limit_nice -%>
+<%- unless @limit_nice.nil? -%>
 LimitNICE=<%= @limit_nice -%>
 <%- end -%>
-<%- if @limit_nofile -%>
+<%- unless @limit_nofile.nil? -%>
 LimitNOFILE=<%= @limit_nofile -%>
 <%- end -%>
-<%- if @limit_nproc -%>
+<%- unless @limit_nproc.nil? -%>
 LimitNPROC=<%= @limit_nproc -%>
 <%- end -%>
-<%- if @limit_rss -%>
+<%- unless @limit_rss.nil? -%>
 LimitRSS=<%= @limit_rss -%>
 <%- end -%>
-<%- if @limit_rtprio -%>
+<%- unless @limit_rtprio.nil? -%>
 LimitRTPRIO=<%= @limit_rtprio -%>
 <%- end -%>
-<%- if @limit_rttime -%>
+<%- unless @limit_rttime.nil? -%>
 LimitRTTIME=<%= @limit_rttime -%>
 <%- end -%>
-<%- if @limit_sigpending -%>
+<%- unless @limit_sigpending.nil? -%>
 LimitSIGPENDING=<%= @limit_sigpending -%>
 <%- end -%>
-<%- if @limit_stack -%>
+<%- unless @limit_stack.nil? -%>
 LimitSTACK=<%= @limit_stack -%>
 <%- end -%>
-<%- if @mount_flags -%>
+<%- unless @mount_flags.nil? -%>
 MountFlags=<%= @mount_flags -%>
 <%- end -%>
-<%- if @nice -%>
+<%- unless @nice.nil? -%>
 Nice=<%= @nice -%>
 <%- end -%>
-<%- if @non_blocking -%>
+<%- unless @non_blocking.nil? -%>
 NonBlocking=<%= @non_blocking -%>
 <%- end -%>
-<%- if @no_new_privileges -%>
+<%- unless @no_new_privileges.nil? -%>
 NoNewPrivileges=<%= @no_new_privileges -%>
 <%- end -%>
-<%- if @notify_access -%>
+<%- unless @notify_access.nil? -%>
 NotifyAccess=<%= @notify_access -%>
 <%- end -%>
-<%- if @oom_score_adjust -%>
+<%- unless @oom_score_adjust.nil? -%>
 OOMScoreAdjust=<%= @oom_score_adjust -%>
 <%- end -%>
-<%- if @pam_name -%>
+<%- unless @pam_name.nil? -%>
 PAMName=<%= @pam_name -%>
 <%- end -%>
-<%- if @pass_environment -%>
+<%- unless @pass_environment.nil? -%>
 PassEnvironment=<%= @pass_environment -%>
 <%- end -%>
-<%- if @permissions_start_only -%>
+<%- unless @permissions_start_only.nil? -%>
 PermissionsStartOnly=<%= @permissions_start_only -%>
 <%- end -%>
-<%- if @personality -%>
+<%- unless @personality.nil? -%>
 Personality=<%= @personality -%>
 <%- end -%>
-<%- if @pid_file -%>
+<%- unless @pid_file.nil? -%>
 PIDFile=<%= @pid_file -%>
 <%- end -%>
-<%- if @private_devices -%>
+<%- unless @private_devices.nil? -%>
 PrivateDevices=<%= @private_devices -%>
 <%- end -%>
-<%- if @private_network -%>
+<%- unless @private_network.nil? -%>
 PrivateNetwork=<%= @private_network -%>
 <%- end -%>
-<%- if @private_tmp -%>
+<%- unless @private_tmp.nil? -%>
 PrivateTmp=<%= @private_tmp -%>
 <%- end -%>
-<%- if @protect_home -%>
+<%- unless @protect_home.nil? -%>
 ProtectHome=<%= @protect_home -%>
 <%- end -%>
-<%- if @protect_system -%>
+<%- unless @protect_system.nil? -%>
 ProtectSystem=<%= @protect_system -%>
 <%- end -%>
-<%- if @read_only_directories -%>
+<%- unless @read_only_directories.nil? -%>
 ReadOnlyDirectories=<%= @read_only_directories -%>
 <%- end -%>
-<%- if @read_write_directories -%>
+<%- unless @read_write_directories.nil? -%>
 ReadWriteDirectories=<%= @read_write_directories -%>
 <%- end -%>
-<%- if @reboot_argument -%>
+<%- unless @reboot_argument.nil? -%>
 RebootArgument=<%= @reboot_argument -%>
 <%- end -%>
-<%- if @remain_after_exit -%>
+<%- unless @remain_after_exit.nil? -%>
 RemainAfterExit=<%= @remain_after_exit -%>
 <%- end -%>
-<%- if @restart -%>
+<%- unless @restart.nil? -%>
 Restart=<%= @restart -%>
 <%- end -%>
-<%- if @restart -%>
+<%- unless @restart.nil? -%>
 Restart=<%= @restart -%>
 <%- end -%>
-<%- if @restart_force_exit_status -%>
+<%- unless @restart_force_exit_status.nil? -%>
 RestartForceExitStatus=<%= @restart_force_exit_status -%>
 <%- end -%>
-<%- if @restart_prevent_exit_status -%>
+<%- unless @restart_prevent_exit_status.nil? -%>
 RestartPreventExitStatus=<%= @restart_prevent_exit_status -%>
 <%- end -%>
-<%- if @restart_sec -%>
+<%- unless @restart_sec.nil? -%>
 RestartSec=<%= @restart_sec -%>
 <%- end -%>
-<%- if @restrict_address_families -%>
+<%- unless @restrict_address_families.nil? -%>
 RestrictAddressFamilies=<%= @restrict_address_families -%>
 <%- end -%>
-<%- if @root_directory -%>
+<%- unless @root_directory.nil? -%>
 RootDirectory=<%= @root_directory -%>
 <%- end -%>
-<%- if @root_directory_start_only -%>
+<%- unless @root_directory_start_only.nil? -%>
 RootDirectoryStartOnly=<%= @root_directory_start_only -%>
 <%- end -%>
-<%- if @runtime_directory -%>
+<%- unless @runtime_directory.nil? -%>
 RuntimeDirectory=<%= @runtime_directory -%>
 <%- end -%>
-<%- if @runtime_directory_mode -%>
+<%- unless @runtime_directory_mode.nil? -%>
 RuntimeDirectoryMode=<%= @runtime_directory_mode -%>
 <%- end -%>
-<%- if @secure_bits -%>
+<%- unless @secure_bits.nil? -%>
 SecureBits=<%= @secure_bits -%>
 <%- end -%>
-<%- if @se_linux_context -%>
+<%- unless @se_linux_context.nil? -%>
 SELinuxContext=<%= @se_linux_context -%>
 <%- end -%>
-<%- if @smack_process_label -%>
+<%- unless @smack_process_label.nil? -%>
 SmackProcessLabel=<%= @smack_process_label -%>
 <%- end -%>
-<%- if @sockets -%>
+<%- unless @sockets.nil? -%>
 Sockets=<%= @sockets -%>
 <%- end -%>
-<%- if @standard_error -%>
+<%- unless @standard_error.nil? -%>
 StandardError=<%= @standard_error -%>
 <%- end -%>
-<%- if @standard_input -%>
+<%- unless @standard_input.nil? -%>
 StandardInput=<%= @standard_input -%>
 <%- end -%>
-<%- if @standard_output -%>
+<%- unless @standard_output.nil? -%>
 StandardOutput=<%= @standard_output -%>
 <%- end -%>
-<%- if @start_limit_action -%>
+<%- unless @start_limit_action.nil? -%>
 StartLimitAction=<%= @start_limit_action -%>
 <%- end -%>
-<%- if @start_limit_burst -%>
+<%- unless @start_limit_burst.nil? -%>
 StartLimitBurst=<%= @start_limit_burst -%>
 <%- end -%>
-<%- if @start_limit_interval -%>
+<%- unless @start_limit_interval.nil? -%>
 StartLimitInterval=<%= @start_limit_interval -%>
 <%- end -%>
-<%- if @success_exit_status -%>
+<%- unless @success_exit_status.nil? -%>
 SuccessExitStatus=<%= @success_exit_status -%>
 <%- end -%>
-<%- if @supplementary_groups -%>
+<%- unless @supplementary_groups.nil? -%>
 SupplementaryGroups=<%= @supplementary_groups -%>
 <%- end -%>
-<%- if @syslog_facility -%>
+<%- unless @syslog_facility.nil? -%>
 SyslogFacility=<%= @syslog_facility -%>
 <%- end -%>
-<%- if @syslog_identifier -%>
+<%- unless @syslog_identifier.nil? -%>
 SyslogIdentifier=<%= @syslog_identifier -%>
 <%- end -%>
-<%- if @syslog_level -%>
+<%- unless @syslog_level.nil? -%>
 SyslogLevel=<%= @syslog_level -%>
 <%- end -%>
-<%- if @syslog_level_prefix -%>
+<%- unless @syslog_level_prefix.nil? -%>
 SyslogLevelPrefix=<%= @syslog_level_prefix -%>
 <%- end -%>
-<%- if @system_call_architectures -%>
+<%- unless @system_call_architectures.nil? -%>
 SystemCallArchitectures=<%= @system_call_architectures -%>
 <%- end -%>
-<%- if @system_call_error_number -%>
+<%- unless @system_call_error_number.nil? -%>
 SystemCallErrorNumber=<%= @system_call_error_number -%>
 <%- end -%>
-<%- if @system_call_filter -%>
+<%- unless @system_call_filter.nil? -%>
 SystemCallFilter=<%= @system_call_filter -%>
 <%- end -%>
-<%- if @timeout_sec -%>
+<%- unless @timeout_sec.nil? -%>
 TimeoutSec=<%= @timeout_sec -%>
 <%- end -%>
-<%- if @timeout_start_sec -%>
+<%- unless @timeout_start_sec.nil? -%>
 TimeoutStartSec=<%= @timeout_start_sec -%>
 <%- end -%>
-<%- if @timeout_stop_sec -%>
+<%- unless @timeout_stop_sec.nil? -%>
 TimeoutStopSec=<%= @timeout_stop_sec -%>
 <%- end -%>
-<%- if @timer_slack_nsec -%>
+<%- unless @timer_slack_nsec.nil? -%>
 TimerSlackNSec=<%= @timer_slack_nsec -%>
 <%- end -%>
-<%- if @tty_path -%>
+<%- unless @tty_path.nil? -%>
 TTYPath=<%= @tty_path -%>
 <%- end -%>
-<%- if @tty_reset -%>
+<%- unless @tty_reset.nil? -%>
 TTYReset=<%= @tty_reset -%>
 <%- end -%>
-<%- if @tty_v_hangup -%>
+<%- unless @tty_v_hangup.nil? -%>
 TTYVHangup=<%= @tty_v_hangup -%>
 <%- end -%>
-<%- if @tty_vt_disallocate -%>
+<%- unless @tty_vt_disallocate.nil? -%>
 TTYVTDisallocate=<%= @tty_vt_disallocate -%>
 <%- end -%>
-<%- if @type -%>
+<%- unless @type.nil? -%>
 Type=<%= @type -%>
 <%- end -%>
-<%- if @umask -%>
+<%- unless @umask.nil? -%>
 UMask=<%= @umask -%>
 <%- end -%>
-<%- if @usb_function_descriptors -%>
+<%- unless @usb_function_descriptors.nil? -%>
 USBFunctionDescriptors=<%= @usb_function_descriptors -%>
 <%- end -%>
-<%- if @usb_function_strings -%>
+<%- unless @usb_function_strings.nil? -%>
 USBFunctionStrings=<%= @usb_function_strings -%>
 <%- end -%>
-<%- if @user -%>
+<%- unless @user.nil? -%>
 User=<%= @user -%>
 <%- end -%>
-<%- if @utmp_identifier -%>
+<%- unless @utmp_identifier.nil? -%>
 UtmpIdentifier=<%= @utmp_identifier -%>
 <%- end -%>
-<%- if @utmp_mode -%>
+<%- unless @utmp_mode.nil? -%>
 UtmpMode=<%= @utmp_mode -%>
 <%- end -%>
-<%- if @watchdog_sec -%>
+<%- unless @watchdog_sec.nil? -%>
 WatchdogSec=<%= @watchdog_sec -%>
 <%- end -%>
-<%- if @working_directory -%>
+<%- unless @working_directory.nil? -%>
 WorkingDirectory=<%= @working_directory -%>
 <%- end -%>

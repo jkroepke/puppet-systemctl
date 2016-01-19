@@ -1,5 +1,5 @@
 module Puppet::Parser::Functions
-  newfunction(:bool_systemd, :type => :rvalue, :doc => <<-EOS
+  newfunction(:systemctl_bool, :type => :rvalue, :doc => <<-EOS
     Return 'Yes' on true, 'No' on false
   EOS
   ) do |arguments|

@@ -1,11 +1,11 @@
 [Swap]
 What=<%= @what -%>
-<%- if @priority -%>
+<%- unless @priority.nil? -%>
 Priority=<%= @priority -%>
 <%- end -%>
-<%- if @options -%>
+<%- unless @options.nil? -%>
 Options=<%= @options -%>
 <%- end -%>
-<%- if @timeout_sec -%>
+<%- unless @timeout_sec.nil? -%>
 TimeoutSec=<%= @timeout_sec -%>
 <%- end -%>

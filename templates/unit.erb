@@ -1,184 +1,184 @@
 [Unit]
-<%- if @after_unit -%>
+<%- unless @after_unit.nil? -%>
 After=<%= @after_unit -%>
 <%- end -%>
-<%- if @allow_isolate -%>
+<%- unless @allow_isolate.nil? -%>
 AllowIsolate=<%= @allow_isolate -%>
 <%- end -%>
-<%- if @assert_acpower -%>
+<%- unless @assert_acpower.nil? -%>
 AssertACPower=<%= @assert_acpower -%>
 <%- end -%>
-<%- if @assert_architecture -%>
+<%- unless @assert_architecture.nil? -%>
 AssertArchitecture=<%= @assert_architecture -%>
 <%- end -%>
-<%- if @assert_capability -%>
+<%- unless @assert_capability.nil? -%>
 AssertCapability=<%= @assert_capability -%>
 <%- end -%>
-<%- if @assert_directory_not_empty -%>
+<%- unless @assert_directory_not_empty.nil? -%>
 AssertDirectoryNotEmpty=<%= @assert_directory_not_empty -%>
 <%- end -%>
-<%- if @assert_file_is_executable -%>
+<%- unless @assert_file_is_executable.nil? -%>
 AssertFileIsExecutable=<%= @assert_file_is_executable -%>
 <%- end -%>
-<%- if @assert_file_not_empty -%>
+<%- unless @assert_file_not_empty.nil? -%>
 AssertFileNotEmpty=<%= @assert_file_not_empty -%>
 <%- end -%>
-<%- if @assert_first_boot -%>
+<%- unless @assert_first_boot.nil? -%>
 AssertFirstBoot=<%= @assert_first_boot -%>
 <%- end -%>
-<%- if @assert_host -%>
+<%- unless @assert_host.nil? -%>
 AssertHost=<%= @assert_host -%>
 <%- end -%>
-<%- if @assert_kernel_command_line -%>
+<%- unless @assert_kernel_command_line.nil? -%>
 AssertKernelCommandLine=<%= @assert_kernel_command_line -%>
 <%- end -%>
-<%- if @assert_needs_update -%>
+<%- unless @assert_needs_update.nil? -%>
 AssertNeedsUpdate=<%= @assert_needs_update -%>
 <%- end -%>
-<%- if @assert_path_exists -%>
+<%- unless @assert_path_exists.nil? -%>
 AssertPathExists=<%= @assert_path_exists -%>
 <%- end -%>
-<%- if @assert_path_exists_glob -%>
+<%- unless @assert_path_exists_glob.nil? -%>
 AssertPathExistsGlob=<%= @assert_path_exists_glob -%>
 <%- end -%>
-<%- if @assert_path_is_directory -%>
+<%- unless @assert_path_is_directory.nil? -%>
 AssertPathIsDirectory=<%= @assert_path_is_directory -%>
 <%- end -%>
-<%- if @assert_path_is_mount_point -%>
+<%- unless @assert_path_is_mount_point.nil? -%>
 AssertPathIsMountPoint=<%= @assert_path_is_mount_point -%>
 <%- end -%>
-<%- if @assert_path_is_read_write -%>
+<%- unless @assert_path_is_read_write.nil? -%>
 AssertPathIsReadWrite=<%= @assert_path_is_read_write -%>
 <%- end -%>
-<%- if @assert_path_is_symbolic_link -%>
+<%- unless @assert_path_is_symbolic_link.nil? -%>
 AssertPathIsSymbolicLink=<%= @assert_path_is_symbolic_link -%>
 <%- end -%>
-<%- if @assert_security -%>
+<%- unless @assert_security.nil? -%>
 AssertSecurity=<%= @assert_security -%>
 <%- end -%>
-<%- if @assert_virtualization -%>
+<%- unless @assert_virtualization.nil? -%>
 AssertVirtualization=<%= @assert_virtualization -%>
 <%- end -%>
-<%- if @before_unit -%>
+<%- unless @before_unit.nil? -%>
 Before=<%= @before_unit -%>
 <%- end -%>
-<%- if @binds_to -%>
+<%- unless @binds_to.nil? -%>
 BindsTo=<%= @binds_to -%>
 <%- end -%>
-<%- if @condition_acpower -%>
+<%- unless @condition_acpower.nil? -%>
 ConditionACPower=<%= @condition_acpower -%>
 <%- end -%>
-<%- if @condition_architecture -%>
+<%- unless @condition_architecture.nil? -%>
 ConditionArchitecture=<%= @condition_architecture -%>
 <%- end -%>
-<%- if @condition_capability -%>
+<%- unless @condition_capability.nil? -%>
 ConditionCapability=<%= @condition_capability -%>
 <%- end -%>
-<%- if @condition_directory_not_empty -%>
+<%- unless @condition_directory_not_empty.nil? -%>
 ConditionDirectoryNotEmpty=<%= @condition_directory_not_empty -%>
 <%- end -%>
-<%- if @condition_file_is_executable -%>
+<%- unless @condition_file_is_executable.nil? -%>
 ConditionFileIsExecutable=<%= @condition_file_is_executable -%>
 <%- end -%>
-<%- if @condition_file_not_empty -%>
+<%- unless @condition_file_not_empty.nil? -%>
 ConditionFileNotEmpty=<%= @condition_file_not_empty -%>
 <%- end -%>
-<%- if @condition_first_boot -%>
+<%- unless @condition_first_boot.nil? -%>
 ConditionFirstBoot=<%= @condition_first_boot -%>
 <%- end -%>
-<%- if @condition_host -%>
+<%- unless @condition_host.nil? -%>
 ConditionHost=<%= @condition_host -%>
 <%- end -%>
-<%- if @condition_kernel_command_line -%>
+<%- unless @condition_kernel_command_line.nil? -%>
 ConditionKernelCommandLine=<%= @condition_kernel_command_line -%>
 <%- end -%>
-<%- if @condition_needs_update -%>
+<%- unless @condition_needs_update.nil? -%>
 ConditionNeedsUpdate=<%= @condition_needs_update -%>
 <%- end -%>
-<%- if @condition_path_exists -%>
+<%- unless @condition_path_exists.nil? -%>
 ConditionPathExists=<%= @condition_path_exists -%>
 <%- end -%>
-<%- if @condition_path_exists_glob -%>
+<%- unless @condition_path_exists_glob.nil? -%>
 ConditionPathExistsGlob=<%= @condition_path_exists_glob -%>
 <%- end -%>
-<%- if @condition_path_is_directory -%>
+<%- unless @condition_path_is_directory.nil? -%>
 ConditionPathIsDirectory=<%= @condition_path_is_directory -%>
 <%- end -%>
-<%- if @condition_path_is_mount_point -%>
+<%- unless @condition_path_is_mount_point.nil? -%>
 ConditionPathIsMountPoint=<%= @condition_path_is_mount_point -%>
 <%- end -%>
-<%- if @condition_path_is_read_write -%>
+<%- unless @condition_path_is_read_write.nil? -%>
 ConditionPathIsReadWrite=<%= @condition_path_is_read_write -%>
 <%- end -%>,
-<%- if @condition_path_is_symbolic_link -%>
+<%- unless @condition_path_is_symbolic_link.nil? -%>
 ConditionPathIsSymbolicLink=<%= @condition_path_is_symbolic_link -%>
 <%- end -%>
-<%- if @condition_security -%>
+<%- unless @condition_security.nil? -%>
 ConditionSecurity=<%= @condition_security -%>
 <%- end -%>
-<%- if @condition_virtualization -%>
+<%- unless @condition_virtualization.nil? -%>
 ConditionVirtualization=<%= @condition_virtualization -%>
 <%- end -%>
-<%- if @conflicts -%>
+<%- unless @conflicts.nil? -%>
 Conflicts=<%= @conflicts -%>
 <%- end -%>
-<%- if @default_dependencies -%>
+<%- unless @default_dependencies.nil? -%>
 DefaultDependencies=<%= @default_dependencies -%>
 <%- end -%>
-<%- if @description -%>
+<%- unless @description.nil? -%>
 Description=<%= @description -%>
 <%- end -%>
-<%- if @documentation -%>
+<%- unless @documentation.nil? -%>
 Documentation=<%= @documentation -%>
 <%- end -%>
-<%- if @ignore_on_isolate -%>
+<%- unless @ignore_on_isolate.nil? -%>
 IgnoreOnIsolate=<%= @ignore_on_isolate -%>
 <%- end -%>
-<%- if @job_timeout_action -%>
+<%- unless @job_timeout_action.nil? -%>
 JobTimeoutAction=<%= @job_timeout_action -%>
 <%- end -%>
-<%- if @job_timeout_reboot_argument -%>
+<%- unless @job_timeout_reboot_argument.nil? -%>
 JobTimeoutRebootArgument=<%= @job_timeout_reboot_argument -%>
 <%- end -%>
-<%- if @job_timeout_sec -%>
+<%- unless @job_timeout_sec.nil? -%>
 JobTimeoutSec=<%= @job_timeout_sec -%>
 <%- end -%>
-<%- if @joins_namespace_of -%>
+<%- unless @joins_namespace_of.nil? -%>
 JoinsNamespaceOf=<%= @joins_namespace_of -%>
 <%- end -%>
-<%- if @on_failure -%>
+<%- unless @on_failure.nil? -%>
 OnFailure=<%= @on_failure -%>
 <%- end -%>
-<%- if @on_failure_job_mode -%>
+<%- unless @on_failure_job_mode.nil? -%>
 OnFailureJobMode=<%= @on_failure_job_mode -%>
 <%- end -%>
-<%- if @part_of -%>
+<%- unless @part_of.nil? -%>
 PartOf=<%= @part_of -%>
 <%- end -%>
-<%- if @propagates_reload_to -%>
+<%- unless @propagates_reload_to.nil? -%>
 PropagatesReloadTo=<%= @propagates_reload_to -%>
 <%- end -%>
-<%- if @refuse_manual_start -%>
+<%- unless @refuse_manual_start.nil? -%>
 RefuseManualStart=<%= @refuse_manual_start -%>
 <%- end -%>
-<%- if @refuse_manual_stop -%>
+<%- unless @refuse_manual_stop.nil? -%>
 RefuseManualStop=<%= @refuse_manual_stop -%>
 <%- end -%>
-<%- if @reload_propagated_from -%>
+<%- unless @reload_propagated_from.nil? -%>
 ReloadPropagatedFrom=<%= @reload_propagated_from -%>
 <%- end -%>
-<%- if @requires -%>
+<%- unless @requires.nil? -%>
 Requires=<%= @requires -%>
 <%- end -%>
-<%- if @requires_mounts_for -%>
+<%- unless @requires_mounts_for.nil? -%>
 RequiresMountsFor=<%= @requires_mounts_for -%>
 <%- end -%>
-<%- if @requisite -%>
+<%- unless @requisite.nil? -%>
 Requisite=<%= @requisite -%>
 <%- end -%>
-<%- if @stop_when_unneeded -%>
+<%- unless @stop_when_unneeded.nil? -%>
 StopWhenUnneeded=<%= @stop_when_unneeded -%>
 <%- end -%>
-<%- if @wants -%>
+<%- unless @wants.nil? -%>
 Wants=<%= @wants -%>
 <%- end -%>

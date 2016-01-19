@@ -1,14 +1,14 @@
 [install]
-<%- if @alias_unit -%>
+<%- unless @alias_unit.nil? -%>
 alias=<%= @alias_unit -%>
 <%- end -%>
-<%- if @also -%>
+<%- unless @also.nil? -%>
 also=<%= @also -%>
 <%- end -%>
-<%- if @default_instance -%>
+<%- unless @default_instance.nil? -%>
 default_instance=<%= @default_instance -%>
 <%- end -%>
-<%- if @required_by -%>
+<%- unless @required_by.nil? -%>
 required_by=<%= @required_by -%>
 <%- end -%>
 wanted_by=<%= @wanted_by -%>
