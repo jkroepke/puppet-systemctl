@@ -264,7 +264,7 @@ class systemctl::unit(
         fail('$timeout_sec must be an integer.')
       }
     }
-    'service', 'exec': {
+    'service': {
       if ($app_armor_profile != undef) {
         validate_string($app_armor_profile)
       }
@@ -909,11 +909,6 @@ class systemctl::unit(
 
   validate_string($wanted_by)
 
-  $template = $type ? {
-    'exec'  => 'service',
-    default => $type,
-  }
-
   Concat::Fragment {
     target => "${::systemctl::unit_dir}/${unit}.${type}"
   }
@@ -929,7 +924,7 @@ class systemctl::unit(
   }
 
   concat::fragment { "automount_${unit}.${type}":
-    content => template("systemctl/${template}.erb"),
+    content => template("systemctl/${type}.erb"),
     order   => '02';
   }
 
