@@ -63,6 +63,8 @@ class systemctl::unit(
   $inaccessible_directories         = [],
   $io_scheduling_class              = undef,
   $io_scheduling_priority           = undef,
+  $kill_mode                        = undef,
+  $kill_signal                      = undef,
   $limit_as                         = undef,
   $limit_core                       = undef,
   $limit_cpu                        = undef,
@@ -110,6 +112,8 @@ class systemctl::unit(
   $runtime_directory_mode           = undef,
   $secure_bits                      = [],
   $se_linux_context                 = undef,
+  $send_sighub                      = undef,
+  $send_sigkill                     = undef,
   $smack_process_label              = undef,
   $sockets                          = undef,
   $standard_error                   = undef,
@@ -260,8 +264,7 @@ class systemctl::unit(
         fail('$timeout_sec must be an integer.')
       }
     }
-    'service': {
-
+    'service', 'exec': {
       if ($app_armor_profile != undef) {
         validate_string($app_armor_profile)
       }
@@ -342,6 +345,14 @@ class systemctl::unit(
 
       if !is_integer($io_scheduling_priority) {
         fail('$io_scheduling_priority must be an integer.')
+      }
+
+      if ($kill_mode != undef) {
+        validate_re($kill_mode, '^(control\-group|process|mixed|none)?$')
+      }
+
+      if ($kill_signal != undef) {
+        validate_re($kill_signal, '^SIG')
       }
 
       if ($limit_as != undef) {
@@ -511,6 +522,14 @@ class systemctl::unit(
         validate_string($se_linux_context)
       }
 
+      if ($send_sighub != undef) {
+        validate_bool($send_sighub)
+      }
+
+      if ($send_sigkill != undef) {
+        validate_bool($send_sigkill)
+      }
+
       if ($smack_process_label != undef) {
         validate_string($smack_process_label)
       }
@@ -641,9 +660,6 @@ class systemctl::unit(
       if ($required_by != undef) {
         validate_absolute_path($working_directory)
       }
-    }
-    'exec': {
-
     }
     default: {
       fail("${type} is not supported for type. Supported type are 'service', 'swap' and 'automount'.")
@@ -893,6 +909,11 @@ class systemctl::unit(
 
   validate_string($wanted_by)
 
+  $template = $type ? {
+    'exec'  => 'service',
+    default => $type,
+  }
+
   Concat::Fragment {
     target => "${::systemctl::unit_dir}/${unit}.${type}"
   }
@@ -908,7 +929,7 @@ class systemctl::unit(
   }
 
   concat::fragment { "automount_${unit}.${type}":
-    content => template("systemctl/${type}.erb"),
+    content => template("systemctl/${template}.erb"),
     order   => '02';
   }
 
