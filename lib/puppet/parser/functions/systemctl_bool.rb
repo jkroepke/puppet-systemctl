@@ -7,7 +7,7 @@ module Puppet::Parser::Functions
     raise(Puppet::ParseError, "bool_systemd(): First Argument must be an boolean, " +
         "given #{arguments.class}.") if arguments.is_a?(FalseClass)
 
-    return 'yes' if arguments[0] == true
-    return false if arguments[0] == false
+    return "'Yes'" if arguments[0] == true
+    return "'No'" if arguments[0] == false
   end
 end
