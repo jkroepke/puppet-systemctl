@@ -50,6 +50,9 @@ ExecStop=<%= @exec_stop -%>
 <%- if @exec_stop_post -%>
 ExecStopPost=<%= @exec_stop_post -%>
 <%- end -%>
+<%- if @exec_stop_pre -%>
+ExecStopPre=<%= @exec_stop_pre -%>
+<%- end -%>
 <%- if @failure_action -%>
 FailureAction=<%= @failure_action -%>
 <%- end -%>
