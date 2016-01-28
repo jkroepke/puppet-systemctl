@@ -124,7 +124,7 @@ class systemctl::unit(
   $runtime_directory_mode           = undef,
   $secure_bits                      = [],
   $se_linux_context                 = undef,
-  $send_sighub                      = undef,
+  $send_sighup                      = undef,
   $send_sigkill                     = undef,
   $slice                            = undef,
   $smack_process_label              = undef,
@@ -586,8 +586,8 @@ class systemctl::unit(
         validate_string($se_linux_context)
       }
 
-      if ($send_sighub != undef) {
-        validate_bool($send_sighub)
+      if ($send_sighup != undef) {
+        validate_bool($send_sighup)
       }
 
       if ($send_sigkill != undef) {

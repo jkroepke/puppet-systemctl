@@ -110,6 +110,12 @@ IOSchedulingClass=<%= @io_scheduling_class -%>
 <%- unless @io_scheduling_priority.nil? -%>
 IOSchedulingPriority=<%= @io_scheduling_priority -%>
 <%- end -%>
+<%- unless @kill_mode.nil? -%>
+KillMode=<%= @kill_mode -%>
+<%- end -%>
+<%- unless @kill_signal.nil? -%>
+KillSignal=<%= @kill_signal -%>
+<%- end -%>
 <%- unless @limit_as.nil? -%>
 LimitAS=<%= @limit_as -%>
 <%- end -%>
@@ -262,6 +268,12 @@ SecureBits=<%= @secure_bits -%>
 <%- end -%>
 <%- unless @se_linux_context.nil? -%>
 SELinuxContext=<%= @se_linux_context -%>
+<%- end -%>
+<%- unless @send_sighup.nil? -%>
+SendSIGHUP=<%= @send_sighup -%>
+<%- end -%>
+<%- unless @send_sigkill.nil? -%>
+SendSIGKILL=<%= @send_sigkill -%>
 <%- end -%>
 <%- unless @slice.nil? -%>
 Slice=<%= @slice -%>
