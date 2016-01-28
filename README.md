@@ -15,41 +15,47 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+The systemctl module helps you to manage service, mount and automount unit files. 
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+The module is designed to managed systemd service unit files. You can configure unit files within hiera or in
+the old plain puppet syntax. 
 
 ## Setup
 
 ### What systemctl affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+* This module will put all unit files in /etc/systemd/system. 
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
+systemctl uses Ruby-based providers, so you must enable [pluginsync](http://docs.puppetlabs.com/guides/plugins_in_modules.html?_ga=1.113888711.1107955408.1439134773#enabling-pluginsync).
 
 ### Beginning with systemctl
 
-The very basic steps needed for a user to get the module up and running.
+Basic requirement for a simple unit file:
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+~~~puppet
+systemctl::unit { 'myapp':
+  ensure      => present,
+  exec_start  => '/usr/local/bin/myapp';
+}
+~~~
+
+Also you can set some optional parameters:
+ 
+~~~puppet
+systemctl::unit { 'myapp':
+  ensure      => present,
+  description => 'My fancy application!',
+  exec_start  => '/usr/local/bin/myapp start',
+  exec_stop   => '/usr/local/bin/myapp stop';
+}
+~~~
+
+
+Fore more paramters, see unit.pp and [man systemd.service](http://www.freedesktop.org/software/systemd/man/systemd.service.html)
 
 ## Usage
 
@@ -58,22 +64,69 @@ the fancy stuff with your module here.
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+Classes:
+* [systemctl](class-systemctl)
+
+Functions:
+* [systemctl_bool](function-systemctl_bool)
+
+Resources:
+* [unit](resource-unit)
+
+### Class: systemctl
+Perforce tasks like purge unmanaged unit files
+~~~puppet
+class { 'systemctl':
+  purge => true;
+}
+~~~
+
+You can set the default path for unit files.
+~~~puppet
+class { 'systemctl':
+  unit_dir => '/etc/systemd/system';
+}
+~~~
+
+#### Parameters
+
+* `purge`: Purge all unmanaged unit files. Defaults to false.
+* `unit_dir`: Directory, where all unit files are saved. Defaults to '/etc/systemd/system'
+* `default_wanted_by`: Default value for the wanted_by parameter in all unit resources. Defaults to 'multi-user.target'
+* `units`: Optional hash of with all manged unit resources. Useful for hiera usage.
+
+### Function: systemctl_bool
+Only used in template. Returns 'Yes' on true, 'No' on false.
+~~~puppet
+# returns 'Yes'
+$var = systemctl_bool(true)
+~~~
+
+### Resource: unit
+Define a unit file.
+~~~puppet
+systemctl::unit { 'myapp':
+  ensure      => present,
+  description => 'My fancy application!',
+  exec_start  => '/usr/local/bin/myapp start',
+  exec_stop   => '/usr/local/bin/myapp stop';
+}
+~~~
+
+
+#### Parameters
+
+* `ensure`: Define, if unit file exits. Valid values are 'present' and 'absent'.
+* `unit`: Name of the unit file.
+* `unit_type`: Type of the unit file. Defaults to 'service'. Valid values are 'automount', 'swap' and 'service'.
+* `service_manage`: Should the service based on the new unit file [managed](https://docs.puppetlabs.com/puppet/latest/reference/type.html#service). Defaults to true
+* `service_enable`: Should the service based on the new unit file [enabled](https://docs.puppetlabs.com/puppet/latest/reference/type.html#service-attribute-enable). Defaults to true
+* `service_ensure`: Should the service based on the new unit file [managed](https://docs.puppetlabs.com/puppet/latest/reference/type.html#service-attribute-ensure). Defaults to 'running'
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+The module work only systems with active systemd. (You probably want only this module, if systemd is active)
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
+My modules are open projects. So if you want to make this module even better, you can contribute to this module on [Github](https://github.com/jkroepke/puppet-systemctl).
