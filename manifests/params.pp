@@ -1,3 +1,4 @@
+#
 class systemctl::params {
   $purge             = false
   $unit_dir          = '/etc/systemd/system'

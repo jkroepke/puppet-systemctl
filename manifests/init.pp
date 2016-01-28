@@ -1,3 +1,4 @@
+#
 class systemctl(
   $purge             = $::systemctl::params::purge,
   $unit_dir          = $::systemctl::unit_dir,
