@@ -535,11 +535,11 @@ class systemctl::unit(
       }
 
       if ($protect_home != undef) {
-        validate_string($protect_home)
+        validate_bool($protect_home)
       }
 
       if ($protect_system != undef) {
-        validate_string($protect_system)
+        validate_bool($protect_system)
 
       }
 

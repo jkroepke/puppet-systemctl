@@ -3,10 +3,10 @@
 After=<%= @after_unit -%>
 <%- end -%>
 <%- unless @allow_isolate.nil? -%>
-AllowIsolate=<%= @allow_isolate -%>
+AllowIsolate=<%= scope.function_systemctl_bool(@allow_isolate) -%>
 <%- end -%>
 <%- unless @assert_acpower.nil? -%>
-AssertACPower=<%= @assert_acpower -%>
+AssertACPower=<%= scope.function_systemctl_bool(@assert_acpower) -%>
 <%- end -%>
 <%- unless @assert_architecture.nil? -%>
 AssertArchitecture=<%= @assert_architecture -%>
@@ -24,7 +24,7 @@ AssertFileIsExecutable=<%= @assert_file_is_executable -%>
 AssertFileNotEmpty=<%= @assert_file_not_empty -%>
 <%- end -%>
 <%- unless @assert_first_boot.nil? -%>
-AssertFirstBoot=<%= @assert_first_boot -%>
+AssertFirstBoot=<%= scope.function_systemctl_bool(@assert_first_boot) -%>
 <%- end -%>
 <%- unless @assert_host.nil? -%>
 AssertHost=<%= @assert_host -%>
@@ -66,7 +66,7 @@ Before=<%= @before_unit -%>
 BindsTo=<%= @binds_to -%>
 <%- end -%>
 <%- unless @condition_acpower.nil? -%>
-ConditionACPower=<%= @condition_acpower -%>
+ConditionACPower=<%= scope.function_systemctl_bool(@condition_acpower) -%>
 <%- end -%>
 <%- unless @condition_architecture.nil? -%>
 ConditionArchitecture=<%= @condition_architecture -%>
@@ -84,7 +84,7 @@ ConditionFileIsExecutable=<%= @condition_file_is_executable -%>
 ConditionFileNotEmpty=<%= @condition_file_not_empty -%>
 <%- end -%>
 <%- unless @condition_first_boot.nil? -%>
-ConditionFirstBoot=<%= @condition_first_boot -%>
+ConditionFirstBoot=<%= scope.function_systemctl_bool(@condition_first_boot) -%>
 <%- end -%>
 <%- unless @condition_host.nil? -%>
 ConditionHost=<%= @condition_host -%>
@@ -123,7 +123,7 @@ ConditionVirtualization=<%= @condition_virtualization -%>
 Conflicts=<%= @conflicts -%>
 <%- end -%>
 <%- unless @default_dependencies.nil? -%>
-DefaultDependencies=<%= @default_dependencies -%>
+DefaultDependencies=<%= scope.function_systemctl_bool(@default_dependencies) -%>
 <%- end -%>
 <%- unless @description.nil? -%>
 Description=<%= @description -%>
@@ -132,7 +132,7 @@ Description=<%= @description -%>
 Documentation=<%= @documentation -%>
 <%- end -%>
 <%- unless @ignore_on_isolate.nil? -%>
-IgnoreOnIsolate=<%= @ignore_on_isolate -%>
+IgnoreOnIsolate=<%= scope.function_systemctl_bool(@ignore_on_isolate) -%>
 <%- end -%>
 <%- unless @job_timeout_action.nil? -%>
 JobTimeoutAction=<%= @job_timeout_action -%>
@@ -159,10 +159,10 @@ PartOf=<%= @part_of -%>
 PropagatesReloadTo=<%= @propagates_reload_to -%>
 <%- end -%>
 <%- unless @refuse_manual_start.nil? -%>
-RefuseManualStart=<%= @refuse_manual_start -%>
+RefuseManualStart=<%= scope.function_systemctl_bool(@refuse_manual_start) -%>
 <%- end -%>
 <%- unless @refuse_manual_stop.nil? -%>
-RefuseManualStop=<%= @refuse_manual_stop -%>
+RefuseManualStop=<%= scope.function_systemctl_bool(@refuse_manual_stop) -%>
 <%- end -%>
 <%- unless @reload_propagated_from.nil? -%>
 ReloadPropagatedFrom=<%= @reload_propagated_from -%>
@@ -174,10 +174,10 @@ Requires=<%= @requires -%>
 RequiresMountsFor=<%= @requires_mounts_for -%>
 <%- end -%>
 <%- unless @requisite.nil? -%>
-Requisite=<%= @requisite -%>
+Requisite=<%= scope.function_systemctl_bool(@requisite) -%>
 <%- end -%>
 <%- unless @stop_when_unneeded.nil? -%>
-StopWhenUnneeded=<%= @stop_when_unneeded -%>
+StopWhenUnneeded=<%= scope.function_systemctl_bool(@stop_when_unneeded) -%>
 <%- end -%>
 <%- unless @wants.nil? -%>
 Wants=<%= @wants -%>

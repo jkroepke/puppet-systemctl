@@ -3,7 +3,7 @@
 AppArmorProfile=<%= @app_armor_profile -%>
 <%- end -%>
 <%- unless @block_io_accounting.nil? -%>
-BlockIOAccounting=<%= @block_io_accounting -%>
+BlockIOAccounting=<%= scope.function_systemctl_bool(@block_io_accounting) -%>
 <%- end -%>
 <%- unless @block_io_device_weight.nil? -%>
 BlockIODeviceWeight=<%= @block_io_device_weight -%>
@@ -33,7 +33,7 @@ CapabilityBoundingSet=<%= @capability_bounding_set -%>
 CPUAffinity=<%= @cpu_affinity -%>
 <%- end -%>
 <%- unless @cpu_accounting.nil? -%>
-CPUAccounting=<%= @cpu_accounting -%>
+CPUAccounting=<%= scope.function_systemctl_bool(@cpu_accounting) -%>
 <%- end -%>
 <%- unless @cpu_quota.nil? -%>
 CPUQuota=<%= @cpu_quota -%>
@@ -45,13 +45,13 @@ CPUSchedulingPolicy=<%= @cpu_scheduling_policy -%>
 CPUSchedulingPriority=<%= @cpu_scheduling_priority -%>
 <%- end -%>
 <%- unless @cpu_scheduling_reset_on_fork.nil? -%>
-CPUSchedulingResetOnFork=<%= @cpu_scheduling_reset_on_fork -%>
+CPUSchedulingResetOnFork=<%= scope.function_systemctl_bool(@cpu_scheduling_reset_on_fork) -%>
 <%- end -%>
 <%- unless @cpu_shares.nil? -%>
 CPUShares=<%= @cpu_shares -%>
 <%- end -%>
 <%- unless @delegate.nil? -%>
-Delegate=<%= @delegate -%>
+Delegate=<%= scope.function_systemctl_bool(@delegate) -%>
 <%- end -%>
 <%- unless @device_policy.nil? -%>
 DevicePolicy=<%= @device_policy -%>
@@ -96,10 +96,10 @@ FileDescriptorStoreMax=<%= @file_descriptor_store_max -%>
 Group=<%= @group -%>
 <%- end -%>
 <%- unless @guess_main_pid.nil? -%>
-GuessMainPID=<%= @guess_main_pid -%>
+GuessMainPID=<%= scope.function_systemctl_bool(@guess_main_pid) -%>
 <%- end -%>
 <%- unless @ignore_sigpipe.nil? -%>
-IgnoreSIGPIPE=<%= @ignore_sigpipe -%>
+IgnoreSIGPIPE=<%= scope.function_systemctl_bool(@ignore_sigpipe) -%>
 <%- end -%>
 <%- unless @inaccessible_directories.nil? -%>
 InaccessibleDirectories=<%= @inaccessible_directories -%>
@@ -165,7 +165,7 @@ NetClass=<%= @net_class -%>
 MountFlags=<%= @mount_flags -%>
 <%- end -%>
 <%- unless @memory_accounting.nil? -%>
-MemoryAccounting=<%= @memory_accounting -%>
+MemoryAccounting=<%= scope.function_systemctl_bool(@memory_accounting) -%>
 <%- end -%>
 <%- unless @memory_limit.nil? -%>
 MemoryLimit=<%= @memory_limit -%>
@@ -174,10 +174,10 @@ MemoryLimit=<%= @memory_limit -%>
 Nice=<%= @nice -%>
 <%- end -%>
 <%- unless @non_blocking.nil? -%>
-NonBlocking=<%= @non_blocking -%>
+NonBlocking=<%= scope.function_systemctl_bool(@non_blocking) -%>
 <%- end -%>
 <%- unless @no_new_privileges.nil? -%>
-NoNewPrivileges=<%= @no_new_privileges -%>
+NoNewPrivileges=<%= scope.function_systemctl_bool(@no_new_privileges) -%>
 <%- end -%>
 <%- unless @notify_access.nil? -%>
 NotifyAccess=<%= @notify_access -%>
@@ -192,7 +192,7 @@ PAMName=<%= @pam_name -%>
 PassEnvironment=<%= @pass_environment -%>
 <%- end -%>
 <%- unless @permissions_start_only.nil? -%>
-PermissionsStartOnly=<%= @permissions_start_only -%>
+PermissionsStartOnly=<%= scope.function_systemctl_bool(@permissions_start_only) -%>
 <%- end -%>
 <%- unless @personality.nil? -%>
 Personality=<%= @personality -%>
@@ -201,13 +201,13 @@ Personality=<%= @personality -%>
 PIDFile=<%= @pid_file -%>
 <%- end -%>
 <%- unless @private_devices.nil? -%>
-PrivateDevices=<%= @private_devices -%>
+PrivateDevices=<%= scope.function_systemctl_bool(@private_devices) -%>
 <%- end -%>
 <%- unless @private_network.nil? -%>
-PrivateNetwork=<%= @private_network -%>
+PrivateNetwork=<%= scope.function_systemctl_bool(@private_network) -%>
 <%- end -%>
 <%- unless @private_tmp.nil? -%>
-PrivateTmp=<%= @private_tmp -%>
+PrivateTmp=<%= scope.function_systemctl_bool(@private_tmp) -%>
 <%- end -%>
 <%- unless @protect_home.nil? -%>
 ProtectHome=<%= @protect_home -%>
@@ -225,7 +225,7 @@ ReadWriteDirectories=<%= @read_write_directories -%>
 RebootArgument=<%= @reboot_argument -%>
 <%- end -%>
 <%- unless @remain_after_exit.nil? -%>
-RemainAfterExit=<%= @remain_after_exit -%>
+RemainAfterExit=<%= scope.function_systemctl_bool(@remain_after_exit) -%>
 <%- end -%>
 <%- unless @restart.nil? -%>
 Restart=<%= @restart -%>
@@ -249,7 +249,7 @@ RestrictAddressFamilies=<%= @restrict_address_families -%>
 RootDirectory=<%= @root_directory -%>
 <%- end -%>
 <%- unless @root_directory_start_only.nil? -%>
-RootDirectoryStartOnly=<%= @root_directory_start_only -%>
+RootDirectoryStartOnly=<%= scope.function_systemctl_bool(@root_directory_start_only) -%>
 <%- end -%>
 <%- unless @runtime_directory.nil? -%>
 RuntimeDirectory=<%= @runtime_directory -%>
@@ -312,7 +312,7 @@ SyslogIdentifier=<%= @syslog_identifier -%>
 SyslogLevel=<%= @syslog_level -%>
 <%- end -%>
 <%- unless @syslog_level_prefix.nil? -%>
-SyslogLevelPrefix=<%= @syslog_level_prefix -%>
+SyslogLevelPrefix=<%= scope.function_systemctl_bool(@syslog_level_prefix) -%>
 <%- end -%>
 <%- unless @system_call_architectures.nil? -%>
 SystemCallArchitectures=<%= @system_call_architectures -%>
@@ -324,7 +324,7 @@ SystemCallErrorNumber=<%= @system_call_error_number -%>
 SystemCallFilter=<%= @system_call_filter -%>
 <%- end -%>
 <%- unless @tasks_accounting.nil? -%>
-TasksAccounting=<%= @tasks_accounting -%>
+TasksAccounting=<%= scope.function_systemctl_bool(@tasks_accounting) -%>
 <%- end -%>
 <%- unless @tasks_max.nil? -%>
 TasksMax=<%= @tasks_max -%>
@@ -345,13 +345,13 @@ TimerSlackNSec=<%= @timer_slack_nsec -%>
 TTYPath=<%= @tty_path -%>
 <%- end -%>
 <%- unless @tty_reset.nil? -%>
-TTYReset=<%= @tty_reset -%>
+TTYReset=<%= scope.function_systemctl_bool(@tty_reset) -%>
 <%- end -%>
 <%- unless @tty_v_hangup.nil? -%>
-TTYVHangup=<%= @tty_v_hangup -%>
+TTYVHangup=<%= scope.function_systemctl_bool(@tty_v_hangup) -%>
 <%- end -%>
 <%- unless @tty_vt_disallocate.nil? -%>
-TTYVTDisallocate=<%= @tty_vt_disallocate -%>
+TTYVTDisallocate=<%= scope.function_systemctl_bool(@tty_vt_disallocate) -%>
 <%- end -%>
 <%- unless @type.nil? -%>
 Type=<%= @type -%>
