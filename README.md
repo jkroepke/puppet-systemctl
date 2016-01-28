@@ -1,5 +1,7 @@
 # systemctl
 
+[![Build Status](https://travis-ci.org/jkroepke/puppet-systemctl.svg?branch=master)](https://travis-ci.org/jkroepke/puppet-systemctl)
+
 #### Table of Contents
 
 1. [Overview](#overview)
