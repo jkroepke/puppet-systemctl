@@ -1,6 +1,6 @@
 [Unit]
-<%- unless @after_unit.nil? -%>
-After=<%= @after_unit -%>
+<%- unless @after_unit.empty? -%>
+After=<%= @after_unit.join(' ') -%>
 <%- end -%>
 <%- unless @allow_isolate.nil? -%>
 AllowIsolate=<%= scope.function_systemctl_bool(@allow_isolate) -%>
@@ -59,8 +59,8 @@ AssertSecurity=<%= @assert_security -%>
 <%- unless @assert_virtualization.nil? -%>
 AssertVirtualization=<%= @assert_virtualization -%>
 <%- end -%>
-<%- unless @before_unit.nil? -%>
-Before=<%= @before_unit -%>
+<%- unless @before_unit.empty? -%>
+Before=<%= @before_unit.join(' ') -%>
 <%- end -%>
 <%- unless @binds_to.nil? -%>
 BindsTo=<%= @binds_to -%>
@@ -119,8 +119,8 @@ ConditionSecurity=<%= @condition_security -%>
 <%- unless @condition_virtualization.nil? -%>
 ConditionVirtualization=<%= @condition_virtualization -%>
 <%- end -%>
-<%- unless @conflicts.nil? -%>
-Conflicts=<%= @conflicts -%>
+<%- unless @conflicts.empty? -%>
+Conflicts=<%= @conflicts.join(' ') -%>
 <%- end -%>
 <%- unless @default_dependencies.nil? -%>
 DefaultDependencies=<%= scope.function_systemctl_bool(@default_dependencies) -%>
@@ -143,11 +143,11 @@ JobTimeoutRebootArgument=<%= @job_timeout_reboot_argument -%>
 <%- unless @job_timeout_sec.nil? -%>
 JobTimeoutSec=<%= @job_timeout_sec -%>
 <%- end -%>
-<%- unless @joins_namespace_of.nil? -%>
-JoinsNamespaceOf=<%= @joins_namespace_of -%>
+<%- unless @joins_namespace_of.empty? -%>
+JoinsNamespaceOf=<%= @joins_namespace_of.join(' ') -%>
 <%- end -%>
-<%- unless @on_failure.nil? -%>
-OnFailure=<%= @on_failure -%>
+<%- unless @on_failure.empty? -%>
+OnFailure=<%= @on_failure.join(' ') -%>
 <%- end -%>
 <%- unless @on_failure_job_mode.nil? -%>
 OnFailureJobMode=<%= @on_failure_job_mode -%>
@@ -155,8 +155,8 @@ OnFailureJobMode=<%= @on_failure_job_mode -%>
 <%- unless @part_of.nil? -%>
 PartOf=<%= @part_of -%>
 <%- end -%>
-<%- unless @propagates_reload_to.nil? -%>
-PropagatesReloadTo=<%= @propagates_reload_to -%>
+<%- unless @propagates_reload_to.empty? -%>
+PropagatesReloadTo=<%= @propagates_reload_to.join(' ') -%>
 <%- end -%>
 <%- unless @refuse_manual_start.nil? -%>
 RefuseManualStart=<%= scope.function_systemctl_bool(@refuse_manual_start) -%>
@@ -164,14 +164,14 @@ RefuseManualStart=<%= scope.function_systemctl_bool(@refuse_manual_start) -%>
 <%- unless @refuse_manual_stop.nil? -%>
 RefuseManualStop=<%= scope.function_systemctl_bool(@refuse_manual_stop) -%>
 <%- end -%>
-<%- unless @reload_propagated_from.nil? -%>
-ReloadPropagatedFrom=<%= @reload_propagated_from -%>
+<%- unless @reload_propagated_from.empty? -%>
+ReloadPropagatedFrom=<%= @reload_propagated_from.join(' ') -%>
 <%- end -%>
-<%- unless @requires.nil? -%>
-Requires=<%= @requires -%>
+<%- unless @requires.empty? -%>
+Requires=<%= @requires.join(' ') -%>
 <%- end -%>
-<%- unless @requires_mounts_for.nil? -%>
-RequiresMountsFor=<%= @requires_mounts_for -%>
+<%- unless @requires_mounts_for.empty? -%>
+RequiresMountsFor=<%= @requires_mounts_for.join(' ') -%>
 <%- end -%>
 <%- unless @requisite.nil? -%>
 Requisite=<%= scope.function_systemctl_bool(@requisite) -%>

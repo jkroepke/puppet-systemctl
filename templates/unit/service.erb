@@ -5,17 +5,17 @@ AppArmorProfile=<%= @app_armor_profile -%>
 <%- unless @block_io_accounting.nil? -%>
 BlockIOAccounting=<%= scope.function_systemctl_bool(@block_io_accounting) -%>
 <%- end -%>
-<%- unless @block_io_device_weight.nil? -%>
-BlockIODeviceWeight=<%= @block_io_device_weight -%>
+<%- unless @block_io_device_weight.empty? -%>
+BlockIODeviceWeight=<%= @block_io_device_weight.join(' ') -%>
 <%- end -%>
-<%- unless @block_io_read_bandwidth.nil? -%>
-BlockIOReadBandwidth=<%= @block_io_read_bandwidth -%>
+<%- unless @block_io_read_bandwidth.empty? -%>
+BlockIOReadBandwidth=<%= @block_io_read_bandwidth.join(' ') -%>
 <%- end -%>
 <%- unless @block_io_weight.nil? -%>
 BlockIOWeight=<%= @block_io_weight -%>
 <%- end -%>
-<%- unless @block_io_write_bandwidth.nil? -%>
-BlockIOWriteBandwidth=<%= @block_io_write_bandwidth -%>
+<%- unless @block_io_write_bandwidth.empty? -%>
+BlockIOWriteBandwidth=<%= @block_io_write_bandwidth.join(' ') -%>
 <%- end -%>
 <%- unless @bus_name.nil? -%>
 BusName=<%= @bus_name -%>
@@ -23,11 +23,11 @@ BusName=<%= @bus_name -%>
 <%- unless @bus_policy.nil? -%>
 BusPolicy=<%= @bus_policy -%>
 <%- end -%>
-<%- unless @capabilities.nil? -%>
-Capabilities=<%= @capabilities -%>
+<%- unless @capabilities.empty? -%>
+Capabilities=<%= @capabilities.join(' ') -%>
 <%- end -%>
-<%- unless @capability_bounding_set.nil? -%>
-CapabilityBoundingSet=<%= @capability_bounding_set -%>
+<%- unless @capability_bounding_set.empty? -%>
+CapabilityBoundingSet=<%= @capability_bounding_set.join(' ') -%>
 <%- end -%>
 <%- unless @cpu_affinity.nil? -%>
 CPUAffinity=<%= @cpu_affinity -%>
@@ -56,14 +56,14 @@ Delegate=<%= scope.function_systemctl_bool(@delegate) -%>
 <%- unless @device_policy.nil? -%>
 DevicePolicy=<%= @device_policy -%>
 <%- end -%>
-<%- unless @device_allow.nil? -%>
-DeviceAllow=<%= @device_allow -%>
+<%- unless @device_allow.empty? -%>
+DeviceAllow=<%= @device_allow.join(' ') -%>
 <%- end -%>
-<%- unless @environment.nil? -%>
-Environment=<%= @environment -%>
+<%- unless @environment.empty? -%>
+Environment=<%= @environment.join(' ') -%>
 <%- end -%>
-<%- unless @environment_file.nil? -%>
-EnvironmentFile=<%= @environment_file -%>
+<%- unless @environment_file.empty? -%>
+EnvironmentFile=<%= @environment_file.join(' ') -%>
 <%- end -%>
 <%- unless @exec_reload.nil? -%>
 ExecReload=<%= @exec_reload -%>
@@ -71,20 +71,20 @@ ExecReload=<%= @exec_reload -%>
 <%- unless @exec_start.nil? -%>
 ExecStart=<%= @exec_start -%>
 <%- end -%>
-<%- unless @exec_start_post.nil? -%>
-ExecStartPost=<%= @exec_start_post -%>
+<%- unless @exec_start_post.empty? -%>
+ExecStartPost=<%= @exec_start_post.join(' ') -%>
 <%- end -%>
-<%- unless @exec_start_pre.nil? -%>
-ExecStartPre=<%= @exec_start_pre -%>
+<%- unless @exec_start_pre.empty? -%>
+ExecStartPre=<%= @exec_start_pre.join(' ') -%>
 <%- end -%>
 <%- unless @exec_stop.nil? -%>
 ExecStop=<%= @exec_stop -%>
 <%- end -%>
-<%- unless @exec_stop_post.nil? -%>
-ExecStopPost=<%= @exec_stop_post -%>
+<%- unless @exec_stop_post.empty? -%>
+ExecStopPost=<%= @exec_stop_post.join(' ') -%>
 <%- end -%>
-<%- unless @exec_stop_pre.nil? -%>
-ExecStopPre=<%= @exec_stop_pre -%>
+<%- unless @exec_stop_pre.empty? -%>
+ExecStopPre=<%= @exec_stop_pre.join(' ') -%>
 <%- end -%>
 <%- unless @failure_action.nil? -%>
 FailureAction=<%= @failure_action -%>
@@ -101,8 +101,8 @@ GuessMainPID=<%= scope.function_systemctl_bool(@guess_main_pid) -%>
 <%- unless @ignore_sigpipe.nil? -%>
 IgnoreSIGPIPE=<%= scope.function_systemctl_bool(@ignore_sigpipe) -%>
 <%- end -%>
-<%- unless @inaccessible_directories.nil? -%>
-InaccessibleDirectories=<%= @inaccessible_directories -%>
+<%- unless @inaccessible_directories.empty? -%>
+InaccessibleDirectories=<%= @inaccessible_directories.join(' ') -%>
 <%- end -%>
 <%- unless @io_scheduling_class.nil? -%>
 IOSchedulingClass=<%= @io_scheduling_class -%>
@@ -194,8 +194,8 @@ OOMScoreAdjust=<%= @oom_score_adjust -%>
 <%- unless @pam_name.nil? -%>
 PAMName=<%= @pam_name -%>
 <%- end -%>
-<%- unless @pass_environment.nil? -%>
-PassEnvironment=<%= @pass_environment -%>
+<%- unless @pass_environment.empty? -%>
+PassEnvironment=<%= @pass_environment.join(' ') -%>
 <%- end -%>
 <%- unless @permissions_start_only.nil? -%>
 PermissionsStartOnly=<%= scope.function_systemctl_bool(@permissions_start_only) -%>
@@ -221,11 +221,11 @@ ProtectHome=<%= @protect_home -%>
 <%- unless @protect_system.nil? -%>
 ProtectSystem=<%= @protect_system -%>
 <%- end -%>
-<%- unless @read_only_directories.nil? -%>
-ReadOnlyDirectories=<%= @read_only_directories -%>
+<%- unless @read_only_directories.empty? -%>
+ReadOnlyDirectories=<%= @read_only_directories.join(' ') -%>
 <%- end -%>
-<%- unless @read_write_directories.nil? -%>
-ReadWriteDirectories=<%= @read_write_directories -%>
+<%- unless @read_write_directories.empty? -%>
+ReadWriteDirectories=<%= @read_write_directories.join(' ') -%>
 <%- end -%>
 <%- unless @reboot_argument.nil? -%>
 RebootArgument=<%= @reboot_argument -%>
@@ -239,17 +239,17 @@ Restart=<%= @restart -%>
 <%- unless @restart.nil? -%>
 Restart=<%= @restart -%>
 <%- end -%>
-<%- unless @restart_force_exit_status.nil? -%>
-RestartForceExitStatus=<%= @restart_force_exit_status -%>
+<%- unless @restart_force_exit_status.empty? -%>
+RestartForceExitStatus=<%= @restart_force_exit_status.join(' ') -%>
 <%- end -%>
-<%- unless @restart_prevent_exit_status.nil? -%>
-RestartPreventExitStatus=<%= @restart_prevent_exit_status -%>
+<%- unless @restart_prevent_exit_status.empty? -%>
+RestartPreventExitStatus=<%= @restart_prevent_exit_status.join(' ') -%>
 <%- end -%>
 <%- unless @restart_sec.nil? -%>
 RestartSec=<%= @restart_sec -%>
 <%- end -%>
-<%- unless @restrict_address_families.nil? -%>
-RestrictAddressFamilies=<%= @restrict_address_families -%>
+<%- unless @restrict_address_families.empty? -%>
+RestrictAddressFamilies=<%= @restrict_address_families.join(' ') -%>
 <%- end -%>
 <%- unless @root_directory.nil? -%>
 RootDirectory=<%= @root_directory -%>
@@ -257,14 +257,14 @@ RootDirectory=<%= @root_directory -%>
 <%- unless @root_directory_start_only.nil? -%>
 RootDirectoryStartOnly=<%= scope.function_systemctl_bool(@root_directory_start_only) -%>
 <%- end -%>
-<%- unless @runtime_directory.nil? -%>
-RuntimeDirectory=<%= @runtime_directory -%>
+<%- unless @runtime_directory.empty? -%>
+RuntimeDirectory=<%= @runtime_directory.join(' ') -%>
 <%- end -%>
 <%- unless @runtime_directory_mode.nil? -%>
 RuntimeDirectoryMode=<%= @runtime_directory_mode -%>
 <%- end -%>
-<%- unless @secure_bits.nil? -%>
-SecureBits=<%= @secure_bits -%>
+<%- unless @secure_bits.empty? -%>
+SecureBits=<%= @secure_bits.join(' ') -%>
 <%- end -%>
 <%- unless @se_linux_context.nil? -%>
 SELinuxContext=<%= @se_linux_context -%>
@@ -308,11 +308,11 @@ StartupCPUShares=<%= @startup_cpu_shares -%>
 <%- unless @startup_block_io_weight.nil? -%>
 StartupBlockIOWeight=<%= @startup_block_io_weight -%>
 <%- end -%>
-<%- unless @success_exit_status.nil? -%>
-SuccessExitStatus=<%= @success_exit_status -%>
+<%- unless @success_exit_status.empty? -%>
+SuccessExitStatus=<%= @success_exit_status.join(' ') -%>
 <%- end -%>
-<%- unless @supplementary_groups.nil? -%>
-SupplementaryGroups=<%= @supplementary_groups -%>
+<%- unless @supplementary_groups.empty? -%>
+SupplementaryGroups=<%= @supplementary_groups.join(' ') -%>
 <%- end -%>
 <%- unless @syslog_facility.nil? -%>
 SyslogFacility=<%= @syslog_facility -%>
@@ -326,14 +326,14 @@ SyslogLevel=<%= @syslog_level -%>
 <%- unless @syslog_level_prefix.nil? -%>
 SyslogLevelPrefix=<%= scope.function_systemctl_bool(@syslog_level_prefix) -%>
 <%- end -%>
-<%- unless @system_call_architectures.nil? -%>
-SystemCallArchitectures=<%= @system_call_architectures -%>
+<%- unless @system_call_architectures.empty? -%>
+SystemCallArchitectures=<%= @system_call_architectures.join(' ') -%>
 <%- end -%>
 <%- unless @system_call_error_number.nil? -%>
 SystemCallErrorNumber=<%= @system_call_error_number -%>
 <%- end -%>
-<%- unless @system_call_filter.nil? -%>
-SystemCallFilter=<%= @system_call_filter -%>
+<%- unless @system_call_filter.empty? -%>
+SystemCallFilter=<%= @system_call_filter.join(' ') -%>
 <%- end -%>
 <%- unless @tasks_accounting.nil? -%>
 TasksAccounting=<%= scope.function_systemctl_bool(@tasks_accounting) -%>
