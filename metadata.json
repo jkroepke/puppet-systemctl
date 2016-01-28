@@ -1,6 +1,6 @@
 {
   "name": "jkroepke-systemctl",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Jan-Otto Kröpke",
   "license": "Apache-2.0",
   "summary": "puppet module to manage systemd services",
