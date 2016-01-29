@@ -34,6 +34,8 @@ class systemctl::unit(
   $what                             = undef,
   $priority                         = undef,
   $options                          = undef,
+
+  # swap and service
   $timeout_sec                      = undef,
 
   # service
@@ -150,7 +152,6 @@ class systemctl::unit(
   $system_call_filter               = [],
   $tasks_accounting                 = undef,
   $tasks_max                        = undef,
-  $timeout_sec                      = undef,
   $timeout_start_sec                = undef,
   $timeout_stop_sec                 = undef,
   $timer_slack_nsec                 = undef,
